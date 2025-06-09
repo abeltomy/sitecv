@@ -25,14 +25,21 @@
         font-size: 1em;
       }
     }
+    body.night {
+      background: #181818;
+      color: #e0e0e0;
+    }
+    body.night a { color: #8ecae6; }
+    body.night nav { border-bottom: 1px solid #333; }
   </style>
 </head>
 <body>
 
 <nav>
-    <a href="index.html">home</a> | 
-    <a href="blog.html">blog</a>
-  </nav>
+  <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
+  <a href="index.html">home</a> | 
+  <a href="blog.html">blog</a>
+</nav>
 
 <p>Hi, I am <strong>Abel Tomy</strong><br><br>
 
@@ -48,5 +55,13 @@ Mailto : hi[at]abeltomy[dot]com<br>
 </blockquote>
 
 <p>Site inspired by <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS principle</a> by Kelly Johnson, Lockheed Martin.</p>
+
+<script>
+  const btn = document.getElementById('night-toggle');
+  btn.onclick = function() {
+    document.body.classList.toggle('night');
+    btn.textContent = document.body.classList.contains('night') ? '☀️' : '🌙';
+  };
+</script>
 </body>
 </html>
