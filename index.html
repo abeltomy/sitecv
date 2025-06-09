@@ -3,6 +3,7 @@
 <head>
   <title>home. Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="image.png">
   <style>
     body {
       font-family: sans-serif;
@@ -58,9 +59,16 @@ Mailto : hi[at]abeltomy[dot]com<br>
 
 <script>
   const btn = document.getElementById('night-toggle');
+  // On page load, check localStorage
+  if (localStorage.getItem('nightMode') === 'on') {
+    document.body.classList.add('night');
+    btn.textContent = '☀️';
+  }
   btn.onclick = function() {
     document.body.classList.toggle('night');
-    btn.textContent = document.body.classList.contains('night') ? '☀️' : '🌙';
+    const isNight = document.body.classList.contains('night');
+    btn.textContent = isNight ? '☀️' : '🌙';
+    localStorage.setItem('nightMode', isNight ? 'on' : 'off');
   };
 </script>
 </body>

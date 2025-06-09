@@ -3,6 +3,7 @@
 <head>
   <title>blog. Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="image.png">
   <style>
     body {
       font-family: sans-serif;
@@ -40,16 +41,23 @@
   </nav>
   <h2>2025</h2>
   <ul>
-    <li><a href="post1.html">Sample blog post 1</a></li>
+    <li><a href="Blogs/japan cover letter/japancoverletter.html">Kakizome-書き初め-new-years resolution</a></li>
     <li>Sample blog post 2</li>
     <li>Sample blog post 3</li>
   </ul>
   <script>
-    const btn = document.getElementById('night-toggle');
-    btn.onclick = function() {
-      document.body.classList.toggle('night');
-      btn.textContent = document.body.classList.contains('night') ? '☀️' : '🌙';
-    };
+  const btn = document.getElementById('night-toggle');
+  // On page load, check localStorage
+  if (localStorage.getItem('nightMode') === 'on') {
+    document.body.classList.add('night');
+    btn.textContent = '☀️';
+  }
+  btn.onclick = function() {
+    document.body.classList.toggle('night');
+    const isNight = document.body.classList.contains('night');
+    btn.textContent = isNight ? '☀️' : '🌙';
+    localStorage.setItem('nightMode', isNight ? 'on' : 'off');
+  };
   </script>
 </body>
 </html>
