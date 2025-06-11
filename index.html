@@ -4,10 +4,13 @@
   <title>home. Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="image.png">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
+
+ <script src="nav.js" defer></script>
 </head>
 <body>
-<div id="navbar"></div>
+<div id="nav-placeholder"></div>
+<script src="/path/to/nav.js"></script>
 
 <p>Hi, I am <strong>Abel Tomy</strong><br><br>
 
@@ -46,19 +49,5 @@ die gallantly. <br>
 Specialization is for insects.”- Robert A. Heinlein 
 </p>
 
-<script>
-  const btn = document.getElementById('night-toggle');
-  // On page load, check localStorage
-  if (localStorage.getItem('nightMode') === 'on') {
-    document.body.classList.add('night');
-    btn.textContent = '☀️';
-  }
-  btn.onclick = function() {
-    document.body.classList.toggle('night');
-    const isNight = document.body.classList.contains('night');
-    btn.textContent = isNight ? '☀️' : '🌙';
-    localStorage.setItem('nightMode', isNight ? 'on' : 'off');
-  };
-</script>
 </body>
 </html>

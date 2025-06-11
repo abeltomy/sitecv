@@ -1,24 +1,34 @@
-// nav.js
-// 1. Inject the navbar where <div id="navbar"></div> appears
-fetch("/nav.html")
-  .then(r => r.text())
-  .then(html => {
-    document.getElementById("navbar").innerHTML = html;
-    attachNightMode();        // wire up the toggle *after* it exists
-  });
+// Immediately load nav.html into every page
+(function loadNavAndInit() {
+  const placeholder = document.getElementById('nav-placeholder');
+  if (!placeholder) return;
 
-// 2. Night-mode helpers (same code you had inline)
-function attachNightMode(){
-  const btn = document.getElementById("night-toggle");
-  if(!btn) return;                      // safety check
-  if(localStorage.getItem("nightMode")==="on"){
-    document.body.classList.add("night");
-    btn.textContent="☀️";
+  fetch('/path/to/nav.html')
+    .then(r => r.text())
+    .then(html => {
+      placeholder.innerHTML = html;
+      initDarkModeToggle();
+    })
+    .catch(console.error);
+
+  function initDarkModeToggle() {
+    const btn = document.getElementById('night-toggle');
+    if (!btn) return;
+
+    // Apply saved mode on load
+    const isNight = localStorage.getItem('night-mode') === 'enabled';
+    document.body.classList.toggle('night-mode', isNight);
+    btn.textContent = isNight ? '☀️' : '🌙';
+
+    // Toggle on click
+    btn.addEventListener('click', () => {
+      const nowNight = !document.body.classList.toggle('night-mode');
+      // If we’re in night, add class; else remove.
+      document.body.classList.toggle('night-mode', !nowNight);
+      // Persist
+      localStorage.setItem('night-mode', !nowNight ? 'enabled' : 'disabled');
+      // Swap icon
+      btn.textContent = !nowNight ? '☀️' : '🌙';
+    });
   }
-  btn.onclick = () => {
-    document.body.classList.toggle("night");
-    const isNight = document.body.classList.contains("night");
-    btn.textContent = isNight ? "☀️" : "🌙";
-    localStorage.setItem("nightMode", isNight ? "on" : "off");
-  };
-}
+})();
