@@ -8,11 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
-    <a href="index.html">home</a> | 
+ <nav style="display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <a href="index.html">home</a> |
     <a href="blog.html">blog</a>
-  </nav>
+  </div>
+  <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
+</nav>
+
   <h2>2025</h2>
 
   <h2>2023</h2>
@@ -21,7 +24,7 @@
     <li><a href="blog/tests.html">test blog </a></li>
     
   </ul>
-  <script>
+<script>
   const btn = document.getElementById('night-toggle');
   // On page load, check localStorage
   if (localStorage.getItem('nightMode') === 'on') {
@@ -34,6 +37,6 @@
     btn.textContent = isNight ? '☀️' : '🌙';
     localStorage.setItem('nightMode', isNight ? 'on' : 'off');
   };
-  </script>
+</script>
 </body>
 </html>
