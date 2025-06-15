@@ -1,12 +1,10 @@
-<link rel="stylesheet" href="style.css">
-<nav style="display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    <a href="/index.html">home</a> |
-    <a href="/blog.html">blog</a>
-  </div>
-  <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
-</nav>
+---
+title: My Document
+date: September 22, 2020
+---
 
+## Test
+some text
 
 ## this is a test
 # hello 
