@@ -20,7 +20,9 @@ nav {
 
 @media (max-width: 600px) {
   body {
-    margin: 0.5em;
+    margin: 0.5em;    .justify-all {
+      text-align: justify;
+    }
     font-size: 1em;
   }
   nav {
