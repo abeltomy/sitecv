@@ -17,8 +17,15 @@ On July 1, 2025, while spending the summer in Tokyo, I set out on a "walk" : vis
 
 2.[Hatagaya. 3-37-8 Hatagaya](https://maps.app.goo.gl/AUXbS3hi4baDBGRc9)<br>
 <img src="telegram-cloud-photo-size-5-6145164097184974462-y.jpg" alt="alt text" width="100%" ><br>
+<hr>
 3.[Nanago Dori Park. 2-53-5 Hatagaya](https://maps.app.goo.gl/bArfkA4iTzpSe4Fq5)
 <img src="telegram-cloud-photo-size-5-6145164097184974464-y.jpg" alt="alt text" width="100%" ><br>
 <img src="telegram-cloud-photo-size-5-6145164097184974465-y.jpg" alt="alt text" width="100%" ><br>
-<img src="telegram-cloud-photo-size-5-6145164097184974466-y.jpg" alt="alt text" width="50%" >
+<img src="telegram-cloud-photo-size-5-6145164097184974466-y.jpg" alt="alt text" width="49%" >
 <img src="telegram-cloud-photo-size-5-6145164097184974467-y.jpg" alt="alt text" width="49%" ><br>
+<hr>
+4.[Nishihara Itchome Park. 1-29-1 Nishihara](https://maps.app.goo.gl/nJRhMbDMKdwtzUBZA)
+<img src="telegram-cloud-photo-size-5-6145164097184974484-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6145164097184974485-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6145164097184974486-y.jpg" alt="alt text" width="49%" ><br>
+<hr>
