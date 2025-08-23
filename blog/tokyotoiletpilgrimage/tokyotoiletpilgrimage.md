@@ -21,4 +21,4 @@ On July 1, 2025, while spending the summer in Tokyo, I set out on a "walk" : vis
 <img src="telegram-cloud-photo-size-5-6145164097184974464-y.jpg" alt="alt text" width="100%" ><br>
 <img src="telegram-cloud-photo-size-5-6145164097184974465-y.jpg" alt="alt text" width="100%" ><br>
 <img src="telegram-cloud-photo-size-5-6145164097184974466-y.jpg" alt="alt text" width="50%" >
-<img src="telegram-cloud-photo-size-5-6145164097184974467-y.jpg" alt="alt text" width="50%" ><br>
+<img src="telegram-cloud-photo-size-5-6145164097184974467-y.jpg" alt="alt text" width="49%" ><br>
