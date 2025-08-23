@@ -14,5 +14,11 @@ On July 1, 2025, while spending the summer in Tokyo, I set out on a "walk" : vis
 
 1.[Sasazuka Greenway.1-29 Sasazuka, Shibuya](https://maps.app.goo.gl/bcxcm77E32yHMgBn8) <br>
 <img src="telegram-cloud-photo-size-5-6145164097184974459-y.jpg" alt="alt text" width="60%" ><br>
+
 2.[Hatagaya. 3-37-8 Hatagaya](https://maps.app.goo.gl/AUXbS3hi4baDBGRc9)<br>
 <img src="telegram-cloud-photo-size-5-6145164097184974462-y.jpg" alt="alt text" width="60%" ><br>
+3.[Nanago Dori Park. 2-53-5 Hatagaya](https://maps.app.goo.gl/bArfkA4iTzpSe4Fq5)
+<img src="telegram-cloud-photo-size-5-6145164097184974464-y.jpg" alt="alt text" width="60%" ><br>
+<img src="telegram-cloud-photo-size-5-6145164097184974465-y.jpg" alt="alt text" width="60%" ><br>
+<img src="telegram-cloud-photo-size-5-6145164097184974466-y.jpg" alt="alt text" width="60%" >
+<img src="telegram-cloud-photo-size-5-6145164097184974467-y.jpg" alt="alt text" width="60%" ><br>
