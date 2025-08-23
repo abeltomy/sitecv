@@ -5,7 +5,7 @@ Date : 17 Aug 2025
 <img src="telegram-cloud-photo-size-5-6145164097184974449-y.jpg" alt="alt text" width="100%" >
 On July 1, 2025, while spending the summer in Tokyo, I set out on a "walk" : visiting the [Tokyo Toilet project](https://en.wikipedia.org/wiki/The_Tokyo_Toilet) sites across the city. Inspired by the film [Perfect Days](https://en.wikipedia.org/wiki/Perfect_Days), I left my hotel room at 8 a.m. and began my journey on foot.This is simply a documentation of the photos I took along the way.<br>
 
--Honarable mentions<br>
+Honarable mentions<br>
 -Aquarius,Pocari Sweat and Onigiri's I ate from konbini<br>
 <img src="IMG_7265.jpeg" alt="alt text" width="30%" >
 <img src="IMG_7105.jpeg" alt="alt text" width="30%" >
@@ -55,10 +55,24 @@ On July 1, 2025, while spending the summer in Tokyo, I set out on a "walk" : vis
 7.[Haru-no-Ogawa Community Park. 5-68-1 Yoyogi](https://maps.app.goo.gl/TH2PEjNCckxuv71eA)<br><br>
 
 <img src="telegram-cloud-photo-size-5-6147690624581750009-y.jpg" alt="alt text" width="100%" ><br>
-<img src="(telegram-cloud-photo-size-5-6147690624581750010-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750010-y.jpg" alt="alt text" width="49%" >
 <video width="49%" controls>
   <source src="2025-08-23 18.18.58.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+<hr>
+
+8.[Yoyogi Fukamachi Mini Park. 1-54-1 Tomigaya](https://maps.app.goo.gl/UW6wwYTiV9XadCpQ8)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750016-y.jpg" alt="alt text" width="100%" >
+<hr>
+
+9.[Urasando.4-28-1 Sendagaya](https://maps.app.goo.gl/4oTsE1YSLoyE2Tm56)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750020-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750024-y.jpg" alt="alt text" width="49%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750025-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750023-y.jpg" alt="alt text" width="49%" >
 
 <hr>
