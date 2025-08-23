@@ -76,3 +76,61 @@ Honarable mentions<br>
 <img src="telegram-cloud-photo-size-5-6147690624581750023-y.jpg" alt="alt text" width="49%" >
 
 <hr>
+10.[Jingumae. 1-3-14 Jingumae](https://maps.app.goo.gl/VHWSjZYfcswz7vHD6)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750027-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750028-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750029-y.jpg" alt="alt text" width="100%" >
+
+<hr>
+
+11.[Jingu-Dori Park. 6-22-8 Jingumae](https://maps.app.goo.gl/5CHaMXYF19MRLXJ78)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750030-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750031-y.jpg" alt="alt text" width="100%" >
+<hr>
+
+12.[Nabeshima Shoto Park. 2-10-7 Shoto](https://maps.app.goo.gl/FFVHmgodU7ywZJkf6)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750033-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750034-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750035-y.jpg" alt="alt text" width="49%" >
+<hr>
+
+13.[Higashi Sanchome. 3-27-1 Higashi](https://maps.app.goo.gl/v5tshjLriRrzfTAo9)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750036-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750037-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750038-y.jpg" alt="alt text" width="49%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750039-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750040-y.jpg" alt="alt text" width="49%" >
+<hr>
+
+
+14.[Ebisu Park. 1-19-1 Ebisu-Nishi](https://maps.app.goo.gl/VEzPuE6pHeCREY4t9)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750043-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750044-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750046-y.jpg" alt="alt text" width="49%" >
+<hr>
+
+15.[Ebisu Station, West Exit. 1-5-8 Ebisu-Minami](https://maps.app.goo.gl/Y4NEZSmFpzjjMnmEA)<br><br>
+
+
+<img src="telegram-cloud-photo-size-5-6147690624581750049-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750050-y.jpg" alt="alt text" width="49%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750051-y.jpg" alt="alt text" width="49%" >
+<hr>
+
+16.[Ebisu East Park. 1-2-16 Ebisu](https://maps.app.goo.gl/ER7caSy3svYaNB3g7)<br><br>
+
+<img src="telegram-cloud-photo-size-5-6147690624581750052-y.jpg" alt="alt text" width="100%" ><br>
+<hr>
+
+17.[Hiroo Higashi Park. 4-2-27 Hiroo](https://maps.app.goo.gl/98H9rqasWREKKrPJ8)
+
+<img src="telegram-cloud-photo-size-5-6147690624581750056-y.jpg" alt="alt text" width="100%" ><br>
+<img src="telegram-cloud-photo-size-5-6147690624581750053-y.jpg" alt="alt text" width="100%" ><br>
+<hr>
+
+## Thnak You!
