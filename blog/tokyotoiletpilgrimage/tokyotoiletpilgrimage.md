@@ -8,8 +8,8 @@ On July 1, 2025, while spending the summer in Tokyo, I set out on a "walk" : vis
 Honarable mentions<br>
 -Aquarius,Pocari Sweat and Onigiri's I ate from konbini.<br>
 <img src="IMG_7265.jpeg" alt="alt text" width="32%" >
-<img src="IMG_7105.jpeg" alt="alt text" width="32" >
-<img src="telegram-cloud-photo-size-5-6147690624581750061-y.jpg" alt="alt text" width="32" >
+<img src="IMG_7105.jpeg" alt="alt text" width="32%" >
+<img src="telegram-cloud-photo-size-5-6147690624581750061-y.jpg" alt="alt text" width="30%" >
 <br>
 
 
