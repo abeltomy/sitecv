@@ -1,26 +1,27 @@
-async function loadNavbar() {
+function loadNavbar() {
   const mount = document.getElementById("site-nav");
   if (!mount) {
     return;
   }
 
+  const scriptUrl = document.currentScript
+    ? new URL(document.currentScript.src, window.location.href)
+    : new URL("components/navbar.js", window.location.href);
+  const siteRoot = new URL("../", scriptUrl);
+  const homeHref = new URL("index.html", siteRoot).href;
+  const blogHref = new URL("blog.html", siteRoot).href;
+  const projectsHref = new URL("projects.html", siteRoot).href;
+
   mount.innerHTML = `
     <nav style="display: flex; justify-content: space-between; align-items: center;">
       <div>
-        <a href="/">home</a> |
-        <a href="/blog.html">blog</a> |
-        <a href="/projects.html">projects</a>
+        <a href="${homeHref}">home</a> |
+        <a href="${blogHref}">blog</a> |
+        <a href="${projectsHref}">projects</a>
       </div>
       <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
     </nav>
   `;
-
-  if (window.location.protocol === "file:") {
-    const links = mount.querySelectorAll("a[href^='/']");
-    links.forEach(function (link) {
-      link.setAttribute("href", link.getAttribute("href").replace(/^\//, ""));
-    });
-  }
 
   const btn = document.getElementById("night-toggle");
   if (!btn) {
