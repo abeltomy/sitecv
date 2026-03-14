@@ -7,14 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav style="display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    <a href="https://abeltomy.com">home</a> |
-    <a href="blog.html">blog</a> |
-    <a href="projects.html">projects</a>
-  </div>
-  <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
-</nav>
+<div id="site-nav"></div>
 
 <p>Hi, I am <strong>Abel Tomy</strong><br><br>
 
@@ -53,19 +46,6 @@ die gallantly. <br>
 Specialization is for insects.”- Robert A. Heinlein 
 </p>
 
-<script>
-  const btn = document.getElementById('night-toggle');
-  // On page load, check localStorage
-  if (localStorage.getItem('nightMode') === 'on') {
-    document.body.classList.add('night');
-    btn.textContent = '☀️';
-  }
-  btn.onclick = function() {
-    document.body.classList.toggle('night');
-    const isNight = document.body.classList.contains('night');
-    btn.textContent = isNight ? '☀️' : '🌙';
-    localStorage.setItem('nightMode', isNight ? 'on' : 'off');
-  };
-</script>
+<script src="components/navbar.js"></script>
 </body>
 </html>

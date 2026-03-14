@@ -8,14 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <nav style="display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    <a href="https://abeltomy.com">home</a> |
-    <a href="blog.html">blog</a> |
-    <a href="projects.html">projects</a>
-  </div>
-  <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
-</nav>
+ <div id="site-nav"></div>
 
   <h2>2025</h2>
   <li><a href="https://docs.google.com/document/d/1iNNlAV6yeQ_WO53hv1-Em6Z2P7xsadmnjVs_1zyTfu0/edit?usp=sharing">2025 // abel tomy annual review</a></li>
@@ -27,19 +20,6 @@
 
 
   </ul>
-<script>
-  const btn = document.getElementById('night-toggle');
-  // On page load, check localStorage
-  if (localStorage.getItem('nightMode') === 'on') {
-    document.body.classList.add('night');
-    btn.textContent = '☀️';
-  }
-  btn.onclick = function() {
-    document.body.classList.toggle('night');
-    const isNight = document.body.classList.contains('night');
-    btn.textContent = isNight ? '☀️' : '🌙';
-    localStorage.setItem('nightMode', isNight ? 'on' : 'off');
-  };
-</script>
+<script src="components/navbar.js"></script>
 </body>
 </html>

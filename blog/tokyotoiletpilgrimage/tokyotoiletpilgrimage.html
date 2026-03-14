@@ -8,14 +8,7 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <nav style="display: flex; justify-content: space-between; align-items: center;">
-    <div>
-     <a href="https://abeltomy.com">home</a> |
-    <a href="https://abeltomy.com/blog.html">blog</a> |
-    <a href="https://abeltomy.com/projects.html">projects</a>
-    </div>
-    <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
-  </nav>
+  <div id="site-nav"></div>
 
   <h1 id="the-tokyo-toilet-pilgrimage">The Tokyo Toilet Pilgrimage</h1>
 Date : 23 Aug 2025
@@ -135,18 +128,6 @@ Park. 4-2-27 Hiroo</a></p>
 <h2 id="thnak-you">Thnak You!</h2>
 <h2 id="abel">-Abel</h2>  <!-- <- This is REQUIRED -->
 
-  <script>
-    const btn = document.getElementById('night-toggle');
-    if (localStorage.getItem('nightMode') === 'on') {
-      document.body.classList.add('night');
-      btn.textContent = '☀️';
-    }
-    btn.onclick = function() {
-      document.body.classList.toggle('night');
-      const isNight = document.body.classList.contains('night');
-      btn.textContent = isNight ? '☀️' : '🌙';
-      localStorage.setItem('nightMode', isNight ? 'on' : 'off');
-    };
-  </script>
+  <script src="../../components/navbar.js"></script>
 </body>
 </html>
