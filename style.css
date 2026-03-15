@@ -163,6 +163,22 @@ body.night .timeline-item::before {
   background: #e0e0e0;
 }
 
+body.consumed-page {
+  max-width: none;
+  margin: 1em;
+}
+
+body.consumed-page .page-title {
+  margin-bottom: 0.5em;
+}
+
+.consumed-frame {
+  display: block;
+  width: 100%;
+  min-height: calc(100vh - 8rem);
+  border: 0;
+}
+
 body.cv-page {
   max-width: 980px;
 }
