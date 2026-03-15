@@ -231,6 +231,10 @@ body.cv-page .timeline-item:nth-child(even)::before {
     text-align: left;
   }
 
+  body.cv-page .timeline-item * {
+    text-align: left;
+  }
+
   body.cv-page .timeline-item::before,
   body.cv-page .timeline-item:nth-child(odd)::before,
   body.cv-page .timeline-item:nth-child(even)::before {
@@ -238,20 +242,4 @@ body.cv-page .timeline-item:nth-child(even)::before {
     right: auto;
   }
 
-  body.cv-page .timeline-item .timeline-title,
-  body.cv-page .timeline-item:nth-child(odd) .timeline-date,
-  body.cv-page .timeline-item:nth-child(even) .timeline-date,
-  body.cv-page .timeline-item:nth-child(odd) .timeline-title,
-  body.cv-page .timeline-item:nth-child(even) .timeline-title,
-  body.cv-page .timeline-item:nth-child(odd) .timeline-org,
-  body.cv-page .timeline-item:nth-child(even) .timeline-org,
-  body.cv-page .timeline-item:nth-child(odd) p {
-    text-align: left;
-  }
-
-  body.cv-page .timeline-item:nth-child(even) p,
-  body.cv-page .timeline-item:nth-child(odd) a,
-  body.cv-page .timeline-item:nth-child(even) a {
-    text-align: left;
-  }
 }
