@@ -39,6 +39,14 @@ body.cv-page header > p {
   margin: 2em 0 1em;
 }
 
+body.cv-page section + section {
+  margin-top: 1em;
+}
+
+body.cv-page section + section .section-title {
+  margin-top: 0;
+}
+
 .timeline {
   position: relative;
   margin: 0;
