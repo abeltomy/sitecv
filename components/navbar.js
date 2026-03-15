@@ -10,6 +10,7 @@ function loadNavbar() {
   const siteRoot = new URL("../", scriptUrl);
   const homeHref = new URL("index.html", siteRoot).href;
   const blogHref = new URL("blog.html", siteRoot).href;
+  const cvHref = new URL("cv.html", siteRoot).href;
   const projectsHref = new URL("projects.html", siteRoot).href;
 
   mount.innerHTML = `
@@ -17,6 +18,7 @@ function loadNavbar() {
       <div>
         <a href="${homeHref}">home</a> |
         <a href="${blogHref}">blog</a> |
+        <a href="${cvHref}">cv</a> |
         <a href="${projectsHref}">projects</a>
       </div>
       <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
