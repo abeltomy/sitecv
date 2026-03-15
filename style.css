@@ -26,9 +26,13 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5em 1em;
-  margin: 0 0 1em;
+  margin: 0;
   padding: 0;
   list-style: none;
+}
+
+body.cv-page header > p {
+  margin: 0.15em 0 0;
 }
 
 .section-title {
