@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>consumed. Abel Tomy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="image.JPG">
+  <link rel="stylesheet" href="style.css?v=2">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXRMJ3V5D0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXRMJ3V5D0');
+  </script>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <h1 class="page-title">consumed.</h1>
+  <p class="page-intro">things I've read, watched, used, eaten, or otherwise consumed.</p>
+
+  <p id="meta" style="font-size:0.85em;color:#888;"></p>
+
+  <ul id="list" style="padding-left:1.2em;"></ul>
+
+  <p id="error" style="display:none;color:#c00;">
+    Could not load data. The sync may not have run yet —
+    <a href="https://github.com/abeltomy/sitecv/actions">check Actions</a>.
+  </p>
+
+  <script>
+    fetch('consumed.json?v=' + Date.now())
+      .then(r => {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .then(({ updated, items }) => {
+        const meta = document.getElementById('meta');
+        const d = new Date(updated);
+        meta.textContent = items.length + ' items · updated ' + d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+
+        const list = document.getElementById('list');
+        list.innerHTML = items.map(item => {
+          const label = item.url
+            ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${escHtml(item.name)}</a>`
+            : escHtml(item.name);
+          return `<li style="margin-bottom:0.4em;">${label} <span style="font-size:0.82em;color:#999;">${item.date}</span></li>`;
+        }).join('');
+      })
+      .catch(() => {
+        document.getElementById('error').style.display = '';
+      });
+
+    function escHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+  </script>
+
+  <script src="components/navbar.js?v=2"></script>
+</body>
+</html>
