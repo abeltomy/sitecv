@@ -40,12 +40,27 @@
         const d = new Date(updated);
         meta.textContent = items.length + ' items · updated ' + d.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
 
+        const groups = {};
+        for (const item of items) {
+          const [y, m] = item.date.split('-');
+          const key = y + '-' + m;
+          const label = new Date(y, m - 1).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+          if (!groups[key]) groups[key] = { label, items: [] };
+          groups[key].items.push(item);
+        }
+
         const list = document.getElementById('list');
-        list.innerHTML = items.map(item => {
-          const label = item.url
-            ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${escHtml(item.name)}</a>`
-            : escHtml(item.name);
-          return `<li style="margin-bottom:0.4em;">${label} <span style="font-size:0.82em;color:#999;">${item.date}</span></li>`;
+        list.style.paddingLeft = '0';
+        list.style.listStyle = 'none';
+        list.innerHTML = Object.keys(groups).sort((a,b) => b.localeCompare(a)).map(key => {
+          const { label, items: gi } = groups[key];
+          const rows = gi.map(item => {
+            const link = item.url
+              ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer">${escHtml(item.name)}</a>`
+              : escHtml(item.name);
+            return `<li style="margin-bottom:0.3em;">${link}</li>`;
+          }).join('');
+          return `<li style="margin-bottom:1.4em;"><strong>${label}</strong><ul style="margin-top:0.3em;">${rows}</ul></li>`;
         }).join('');
       })
       .catch(() => {
