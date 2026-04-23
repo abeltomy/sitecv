@@ -1,6 +1,26 @@
 {
-  "updated": "2026-04-23T06:10:18.433Z",
+  "updated": "2026-04-23T08:56:27.467Z",
   "items": [
+    {
+      "name": "Tech Blog",
+      "url": "https://tech.marksblogg.com/",
+      "date": "2026-04-23"
+    },
+    {
+      "name": "Depth Anything V2",
+      "url": "https://depth-anything-v2.github.io/",
+      "date": "2026-04-23"
+    },
+    {
+      "name": "Flipbook",
+      "url": "https://flipbook.page/",
+      "date": "2026-04-23"
+    },
+    {
+      "name": "The handmade beauty of Machine Age data visualizations",
+      "url": "https://resobscura.substack.com/p/the-handmade-beauty-of-machine-age",
+      "date": "2026-04-23"
+    },
     {
       "name": "(16) THE YOGIS OF TIBET - Rare Documentary Film - YouTube",
       "url": "https://www.youtube.com/watch?v=GrWhX1BixBk",
