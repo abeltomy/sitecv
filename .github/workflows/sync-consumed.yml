@@ -2,7 +2,7 @@ name: Sync Consumed
 
 on:
   schedule:
-    - cron: '0 * * * *'   # every hour
+    - cron: '0 6 * * 0'   # every Sunday at 6 AM UTC
   workflow_dispatch:        # manual trigger from GitHub UI
 
 permissions:
