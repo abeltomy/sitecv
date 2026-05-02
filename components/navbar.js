@@ -19,7 +19,8 @@ function loadNavbar() {
         <a href="${homeHref}">home</a> |
         <a href="${blogHref}">blog</a> |
         <a href="${cvHref}">cv</a> |
-        <a href="${projectsHref}">projects</a>
+        <a href="${projectsHref}">projects</a> |
+        <a href="https://feed.abeltomy.com/" target="_blank" rel="noopener noreferrer">feed</a>
       </div>
       <button id="night-toggle" style="background:none;border:none;cursor:pointer;font-size:1.2em;" title="Toggle night mode">🌙</button>
     </nav>
