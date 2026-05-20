@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List of Licenses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/image.JPG">
+  <script src="/components/analytics.js"></script>
+  <style>
+    :root {
+      --bg: #fff; --fg: #111; --fg-muted: #555;
+      --border: #ddd; --row-hover: #f5f5f5; --header-bg: #f0f0f0;
+      --pill-bg: #eee; --pill-active-bg: #111; --pill-active-fg: #fff;
+      /* quality: green=positive, orange=concerning, red=serious */
+      --q-good: #1a7f37;    --q-good-bg: #d4f0dc;
+      --q-concern: #92400e; --q-concern-bg: #fef3c7;
+      --q-bad: #b91c1c;     --q-bad-bg: #fee2e2;
+      /* type column colors */
+      --t-blue: #1d4ed8;    --t-blue-bg: #dbeafe;
+      --t-purple: #6d28d9;  --t-purple-bg: #ede9fe;
+      --t-gray: #374151;    --t-gray-bg: #f3f4f6;
+      --t-pink: #9d174d;    --t-pink-bg: #fce7f3;
+      /* category tags */
+      --tag-sw: #1d4ed8;    --tag-sw-bg: #dbeafe;
+      --tag-hw: #7e22ce;    --tag-hw-bg: #f3e8ff;
+      --tag-md: #0f766e;    --tag-md-bg: #ccfbf1;
+      /* copyleft tags */
+      --tag-perm:   #166534; --tag-perm-bg:   #dcfce7;
+      --tag-weak:   #92400e; --tag-weak-bg:   #fef3c7;
+      --tag-strong: #991b1b; --tag-strong-bg: #fee2e2;
+      --input-bg: #fff; --sticky-bg: #fff;
+      --quality-header: #f0faf4; --type-header: #f0f4ff;
+    }
+    body.night {
+      --bg: #181818; --fg: #e0e0e0; --fg-muted: #b8b8b8;
+      --border: #333; --row-hover: #242424; --header-bg: #222;
+      --pill-bg: #2a2a2a; --pill-active-bg: #e0e0e0; --pill-active-fg: #111;
+      --q-good: #4ade80;    --q-good-bg: #052e16;
+      --q-concern: #fcd34d; --q-concern-bg: #451a03;
+      --q-bad: #f87171;     --q-bad-bg: #450a0a;
+      --t-blue: #93c5fd;    --t-blue-bg: #1e3a5f;
+      --t-purple: #c4b5fd;  --t-purple-bg: #3b1f6e;
+      --t-gray: #9ca3af;    --t-gray-bg: #1f2937;
+      --t-pink: #f9a8d4;    --t-pink-bg: #4a0519;
+      --tag-sw: #93c5fd;    --tag-sw-bg: #1e3a5f;
+      --tag-hw: #c4b5fd;    --tag-hw-bg: #3b1f6e;
+      --tag-md: #5eead4;    --tag-md-bg: #0d3330;
+      --tag-perm:   #86efac; --tag-perm-bg:   #052e16;
+      --tag-weak:   #fcd34d; --tag-weak-bg:   #451a03;
+      --tag-strong: #fca5a5; --tag-strong-bg: #450a0a;
+      --input-bg: #222; --sticky-bg: #181818;
+      --quality-header: #0d1f14; --type-header: #0d1229;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--fg); line-height:1.5; }
+    .page-wrapper { max-width:100%; padding:0 1.25em; }
+    .top-bar { padding:1em 0 0; margin-bottom:1em; }
+    nav { margin-bottom:1em; }
+    nav a { color:var(--fg); text-decoration:none; }
+    nav a:hover { text-decoration:underline; }
+    h1 { font-size:1.6em; font-weight:700; margin-bottom:0.6em; }
+    h2 { font-size:1.25em; font-weight:700; margin:2em 0 0.75em; }
+
+    /* Column descriptions */
+    .col-desc { border:1px solid var(--border); border-radius:8px; margin-bottom:1.25em; font-size:0.88em; }
+    .col-desc summary { padding:0.6em 1em; cursor:pointer; font-weight:600; user-select:none; list-style:none; }
+    .col-desc summary::before { content:"▶ "; font-size:0.75em; }
+    .col-desc[open] summary::before { content:"▼ "; }
+    .col-desc-body { padding:0 1.25em 1.25em; border-top:1px solid var(--border); }
+    .col-desc-body p { margin:0.75em 0 0.4em; color:var(--fg-muted); }
+    .col-desc-body ul { padding-left:1.25em; color:var(--fg-muted); }
+    .col-desc-body li { margin-bottom:0.3em; }
+    .col-desc-body .sub-list { margin-top:0.3em; }
+
+    /* Legend */
+    .legend { display:flex; flex-wrap:wrap; gap:0.5em 1.25em; font-size:0.8em; margin-bottom:0.9em; align-items:center; }
+    .legend-group { display:flex; flex-wrap:wrap; gap:0.4em; align-items:center; }
+    .legend-label { font-weight:600; color:var(--fg-muted); margin-right:0.3em; }
+
+    /* Controls */
+    .controls {
+      display:flex; flex-wrap:wrap; gap:0.75em; align-items:center;
+      margin-bottom:0.6em; position:sticky; top:0;
+      background:var(--sticky-bg); padding:0.75em 0; z-index:10;
+      border-bottom:1px solid var(--border);
+    }
+    .search-wrap { flex:1; min-width:160px; max-width:260px; }
+    input[type="search"] {
+      width:100%; padding:0.4em 0.7em; border:1px solid var(--border);
+      border-radius:6px; font-size:0.88em; background:var(--input-bg); color:var(--fg); outline:none;
+    }
+    input[type="search"]:focus { border-color:var(--fg-muted); }
+    .pill-group { display:flex; flex-wrap:wrap; gap:0.35em; }
+    .pill {
+      padding:0.25em 0.8em; border-radius:20px; font-size:0.8em; font-weight:500;
+      cursor:pointer; border:1px solid var(--border); background:var(--pill-bg);
+      color:var(--fg); transition:background 0.15s,color 0.15s,border-color 0.15s; user-select:none;
+    }
+    .pill.active { background:var(--pill-active-bg); color:var(--pill-active-fg); border-color:var(--pill-active-bg); }
+    #cat-filter .pill[data-cat="all"].active      { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+    #cat-filter .pill[data-cat="software"].active { background:var(--tag-sw-bg); color:var(--tag-sw); border-color:var(--tag-sw); }
+    #cat-filter .pill[data-cat="hardware"].active { background:var(--tag-hw-bg); color:var(--tag-hw); border-color:var(--tag-hw); }
+    #cat-filter .pill[data-cat="media"].active    { background:var(--tag-md-bg); color:var(--tag-md); border-color:var(--tag-md); }
+    #cat-filter .pill[data-cat="software"] { border-color:var(--tag-sw); color:var(--tag-sw); }
+    #cat-filter .pill[data-cat="hardware"] { border-color:var(--tag-hw); color:var(--tag-hw); }
+    #cat-filter .pill[data-cat="media"]    { border-color:var(--tag-md); color:var(--tag-md); }
+    .filter-divider { width:1px; height:1.5em; background:var(--border); align-self:center; flex-shrink:0; }
+    .filter-label { font-size:0.7em; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:var(--fg-muted); white-space:nowrap; align-self:center; }
+    .night-btn { margin-left:auto; background:none; border:none; cursor:pointer; font-size:1.2em; padding:0.2em; }
+    .count-label { font-size:0.8em; color:var(--fg-muted); white-space:nowrap; }
+
+    .compare-bar {
+      display:none; align-items:center; gap:0.75em; padding:0.55em 1em;
+      background:var(--pill-active-bg); color:var(--pill-active-fg);
+      border-radius:8px; margin-bottom:0.75em; font-size:0.86em; flex-wrap:wrap;
+    }
+    .compare-bar.visible { display:flex; }
+    .compare-bar button { padding:0.2em 0.65em; border-radius:5px; border:1px solid var(--border); background:var(--bg); color:var(--fg); cursor:pointer; font-size:0.83em; }
+
+    .table-scroll { overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; font-size:0.84em; }
+
+    thead th.q-col { background:var(--quality-header); }
+    thead th.t-col  { background:var(--type-header); }
+    thead th.group-header { text-align:center; font-size:0.7em; text-transform:uppercase; letter-spacing:0.05em; padding:0.25em 0.5em; border:none; }
+    thead th.group-header.q-col { color:var(--q-good); border-bottom:2px solid var(--q-good); }
+    thead th.group-header.t-col  { color:var(--t-blue); border-bottom:2px solid var(--t-blue); }
+
+    thead th { padding:0.5em 0.6em; text-align:left; font-weight:600; white-space:nowrap; border-bottom:2px solid var(--border); cursor:pointer; user-select:none; }
+    thead th:hover { filter:brightness(0.96); }
+    thead th .sort-icon { margin-left:0.25em; opacity:0.4; font-size:0.78em; }
+    thead th.sorted .sort-icon { opacity:1; }
+
+    tbody tr { border-bottom:1px solid var(--border); cursor:pointer; transition:background 0.1s; }
+    tbody tr:hover { background:var(--row-hover); }
+    tbody tr.selected { outline:2px solid color-mix(in srgb, var(--fg) 20%, transparent); outline-offset:-1px; }
+    td { padding:0.8em 0.6em; vertical-align:middle; }
+    td.name-cell { font-weight:600; white-space:nowrap; min-width:150px; }
+    #combo-table td.name-cell { white-space:normal; min-width:280px; }
+    .version-note { font-size:0.76em; color:var(--fg-muted); font-weight:400; margin-left:0.3em; }
+
+    .tag { display:inline-block; padding:0.12em 0.5em; border-radius:4px; font-size:0.76em; font-weight:600; white-space:nowrap; }
+    .tag-sw { color:var(--tag-sw); background:var(--tag-sw-bg); }
+    .tag-hw { color:var(--tag-hw); background:var(--tag-hw-bg); }
+    .tag-md { color:var(--tag-md); background:var(--tag-md-bg); }
+    .tag-perm   { color:var(--tag-perm);   background:var(--tag-perm-bg); }
+    .tag-weak   { color:var(--tag-weak);   background:var(--tag-weak-bg); }
+    .tag-strong { color:var(--tag-strong); background:var(--tag-strong-bg); }
+
+    /* Quality badges */
+    .qbadge { display:inline-block; padding:0.12em 0.5em; border-radius:4px; font-size:0.78em; font-weight:600; white-space:nowrap; margin:0.1em; }
+    .qbadge-good    { color:var(--q-good);    background:var(--q-good-bg); }
+    .qbadge-concern { color:var(--q-concern); background:var(--q-concern-bg); }
+    .qbadge-bad     { color:var(--q-bad);     background:var(--q-bad-bg); }
+
+    /* Type badges */
+    .tbadge { display:inline-block; padding:0.12em 0.5em; border-radius:4px; font-size:0.78em; font-weight:500; white-space:nowrap; }
+    .tbadge-blue   { color:var(--t-blue);   background:var(--t-blue-bg); }
+    .tbadge-purple { color:var(--t-purple); background:var(--t-purple-bg); }
+    .tbadge-gray   { color:var(--t-gray);   background:var(--t-gray-bg); }
+    .tbadge-pink   { color:var(--t-pink);   background:var(--t-pink-bg); }
+
+    /* Multi-tag cell */
+    .tag-cell { display:flex; flex-wrap:wrap; gap:0.15em; min-width:100px; }
+
+    /* Expand/detail row */
+    .detail-row { display:none; }
+    .detail-row.open { display:table-row; }
+    .detail-row td { padding:0.9em 1em 0.9em 2em; background:var(--row-hover); border-bottom:2px solid var(--border); }
+    .recip-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:0.6em 1.5em; margin-bottom:0.7em; }
+    .detail-item { font-size:0.84em; }
+    .detail-label { color:var(--fg-muted); font-size:0.78em; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:0.2em; }
+    .detail-val { color:var(--fg); }
+    .detail-note { margin-top:0.6em; padding:0.5em 0.8em; border-left:3px solid var(--border); font-size:0.83em; color:var(--fg-muted); }
+    .detail-links { margin-top:0.6em; font-size:0.83em; }
+    .detail-links a { color:var(--fg); margin-right:1em; }
+
+    .compare-checkbox { width:1em; height:1em; cursor:pointer; accent-color:var(--fg); }
+    .check-cell { text-align:center; }
+
+    /* Compare modal */
+    .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:100; overflow-y:auto; }
+    .modal-overlay.open { display:block; }
+    .modal { background:var(--bg); max-width:1100px; margin:2em auto; border-radius:10px; padding:1.5em; position:relative; }
+    .modal-close { position:absolute; top:1em; right:1em; background:none; border:none; font-size:1.4em; cursor:pointer; color:var(--fg); }
+    .modal h2 { margin-bottom:1em; font-size:1.1em; }
+    .compare-table-wrap { overflow-x:auto; }
+    .compare-table { width:100%; border-collapse:collapse; font-size:0.86em; }
+    .compare-table th,.compare-table td { border:1px solid var(--border); padding:0.5em 0.75em; text-align:center; min-width:130px; }
+    .compare-table th:first-child,.compare-table td:first-child { text-align:left; font-weight:600; min-width:140px; background:var(--header-bg); }
+    .compare-table thead th { background:var(--header-bg); font-weight:700; position:static; cursor:default; }
+
+    /* Combinations */
+    .combinations { margin-top:0.75em; padding-top:0.5em; border-top:1px solid var(--border); }
+    .combinations h2 { margin-top:0; margin-bottom:0.4em; }
+    .combo-controls { position:static; border-bottom:none; padding:0.5em 0 0.75em; margin-bottom:0.25em; }
+    #combo-table tbody tr { cursor:default; }
+
+    @media (max-width:700px) {
+      .page-wrapper { padding:0 0.6em; }
+      h1 { font-size:1.25em; }
+      table { font-size:0.76em; }
+      td,th { padding:0.4em 0.45em; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <div class="top-bar">
+    <div id="site-nav"></div>
+    <h1>Comparison of Licenses</h1>
+  </div>
+
+  <details class="col-desc">
+    <summary>About the columns</summary>
+    <div class="col-desc-body">
+      <p><strong style="color:var(--q-good)">Green</strong> / <strong style="color:var(--q-concern)">orange</strong> / <strong style="color:var(--q-bad)">red</strong> columns are quality judgements (good → bad). <strong style="color:var(--t-blue)">Blue</strong> / <strong style="color:var(--t-purple)">purple</strong> columns are just different types — neither is better.</p>
+      <ul>
+        <li><strong>Readability</strong> — is the license written in plain language a non-lawyer can understand? Some newer licenses are intentionally written this way, though they're not yet widely adopted.</li>
+        <li><strong>Patent Grant</strong> — does the license explicitly give you the right to make, use, or sell the work without fear of a patent lawsuit from the licensor?</li>
+        <li><strong>Modification Notices</strong> — must you list every change you make to the work? This adds admin overhead but protects the original author's reputation if your changes cause problems.</li>
+        <li><strong>Reciprocality</strong> — if you build on the work, do you have to share your changes? (Permissive = no. Reciprocal = yes, under these terms.)
+          <ul class="sub-list">
+            <li><strong>Trigger</strong> — what action requires you to share</li>
+            <li><strong>Reach</strong> — how much of your work you must share</li>
+            <li><strong>Licensing</strong> — what license your shared work must use</li>
+            <li><strong>Distribution</strong> — how you must make it available</li>
+          </ul>
+        </li>
+        <li><strong>Cure Provision</strong> — if you accidentally break the license terms, do you get a chance to fix it before losing your rights? Without this, a mistake immediately terminates your license.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="controls">
+    <div class="search-wrap">
+      <input type="search" id="search" placeholder="Search licenses…" autocomplete="off">
+    </div>
+    <span class="filter-label">Type</span>
+    <div class="pill-group" id="cat-filter">
+      <span class="pill active" data-cat="all">All</span>
+      <span class="pill" data-cat="software">Software</span>
+      <span class="pill" data-cat="hardware">Hardware</span>
+      <span class="pill" data-cat="media">Media</span>
+    </div>
+    <div class="filter-divider"></div>
+    <span class="filter-label">Reciprocality</span>
+    <div class="pill-group" id="type-filter">
+      <span class="pill active" data-type="all">All</span>
+      <span class="pill" data-type="Permissive">Permissive</span>
+      <span class="pill" data-type="Weakly Reciprocal">Weakly Reciprocal</span>
+      <span class="pill" data-type="Strongly Reciprocal">Strongly Reciprocal</span>
+    </div>
+    <span class="count-label" id="count-label"></span>
+    <button class="night-btn" id="page-night-btn" title="Toggle night mode">🌙</button>
+  </div>
+
+  <div class="legend">
+    <div class="legend-group">
+      <span class="legend-label">Quality columns:</span>
+      <span class="qbadge qbadge-good">Positive</span>
+      <span class="qbadge qbadge-concern">Concerning</span>
+      <span class="qbadge qbadge-bad">Seriously concerning</span>
+    </div>
+    <span style="font-size:0.8em;color:var(--fg-muted)">Click row to expand reciprocality details · checkboxes to compare</span>
+  </div>
+
+  <div class="compare-bar" id="compare-bar">
+    <strong id="compare-count">0 selected</strong>
+    <button id="compare-btn">Compare side by side</button>
+    <button id="compare-clear">Clear</button>
+    <span style="font-size:0.78em;opacity:0.7">max 5</span>
+  </div>
+
+  <div class="table-scroll">
+    <table id="license-table">
+      <thead>
+        <tr>
+          <th colspan="3" style="background:var(--header-bg);border:none"></th>
+          <th colspan="3" class="group-header q-col">Quality columns</th>
+          <th class="group-header t-col">Type column</th>
+          <th class="group-header q-col">Quality</th>
+          <th style="background:var(--header-bg);border:none"></th>
+        </tr>
+        <tr>
+          <th data-col="name">License <span class="sort-icon">↕</span></th>
+          <th data-col="cat">Type <span class="sort-icon">↕</span></th>
+          <th data-col="type1">Reciprocality <span class="sort-icon">↕</span></th>
+          <th class="q-col" data-col="readability" title="Is it written in plain language a non-lawyer can understand?">Readability <span class="sort-icon">↕</span></th>
+          <th class="q-col" data-col="patentGrant" title="Does the license give you the right to make/use/sell without patent risk?">Patent Grant <span class="sort-icon">↕</span></th>
+          <th class="q-col" data-col="popularity" title="How widely used this license is">Popularity <span class="sort-icon">↕</span></th>
+          <th class="t-col" data-col="modNotices" title="Must you document every change you make to the work?">Mod. Notices <span class="sort-icon">↕</span></th>
+          <th class="q-col" data-col="cureProv" title="Can you fix an accidental violation before losing your license?">Cure Provision <span class="sort-icon">↕</span></th>
+          <th class="check-cell" data-col="compare" style="cursor:default;">Compare</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <section class="combinations">
+    <h2>List of License Combinations</h2>
+    <p style="color:var(--fg-muted);font-size:0.9em;margin-bottom:1em">Common pairings of hardware + software + media licenses that work well together.</p>
+
+    <div class="controls combo-controls">
+      <div class="search-wrap">
+        <input type="search" id="combo-search" placeholder="Search combinations…" autocomplete="off">
+      </div>
+      <span class="filter-label">Type</span>
+      <div class="pill-group" id="combo-type-filter">
+        <span class="pill active" data-ctype="all">All</span>
+        <span class="pill" data-ctype="Strongly Reciprocal">Strongly Reciprocal</span>
+        <span class="pill" data-ctype="Weakly Reciprocal">Weakly Reciprocal</span>
+        <span class="pill" data-ctype="Permissive">Permissive</span>
+        <span class="pill" data-ctype="Mixed">Mixed</span>
+      </div>
+      <span class="count-label" id="combo-count-label"></span>
+    </div>
+
+    <div class="legend" style="margin-bottom:0.75em">
+      <div class="legend-group">
+        <span class="legend-label">Type columns:</span>
+        <span class="tbadge tbadge-purple">Strongly Reciprocal</span>
+        <span class="tbadge tbadge-blue">Weakly Reciprocal</span>
+        <span class="tbadge tbadge-gray">Permissive</span>
+        <span class="tbadge tbadge-pink">Mixed / Hardware Only</span>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table id="combo-table">
+        <thead>
+          <tr>
+            <th style="background:var(--header-bg);border:none"></th>
+            <th colspan="2" class="group-header t-col">Type columns</th>
+            <th colspan="5" class="group-header q-col">Quality columns</th>
+          </tr>
+          <tr>
+            <th data-ccol="name">Combination <span class="sort-icon">↕</span></th>
+            <th class="t-col" data-ccol="type">Combination Type <span class="sort-icon">↕</span></th>
+            <th class="t-col" data-ccol="modNotices">Mod. Notices <span class="sort-icon">↕</span></th>
+            <th class="q-col" data-ccol="cureProv">Cure Provision <span class="sort-icon">↕</span></th>
+            <th class="q-col" data-ccol="swReadability">SW Readability <span class="sort-icon">↕</span></th>
+            <th class="q-col" data-ccol="swFlexibility">SW Flexibility <span class="sort-icon">↕</span></th>
+            <th class="q-col" data-ccol="swPopularity">SW Popularity <span class="sort-icon">↕</span></th>
+            <th class="q-col" data-ccol="hwSwConsistency">HW/SW Consistency <span class="sort-icon">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="combo-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">×</button>
+    <h2>Side-by-side comparison</h2>
+    <div class="compare-table-wrap" id="compare-table-wrap"></div>
+  </div>
+</div>
+
+<script src="/components/navbar.js?v=2"></script>
+<script>
+/* ── Data (from Notion: Comparison of Licenses, 2025-09-25) ── */
+const LICENSES = [
+  {
+    id:"mit", name:"MIT", version:"1", cat:"software", type1:"Permissive",
+    readability:["Legalese","Short"],
+    patentGrant:"Ambiguous", popularity:["Established","Popular"],
+    modNotices:"Not Required", cureProv:"No",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"BSD 2-Clause-Patent is better than MIT.",
+    drafterExpl:"", link:"https://choosealicense.com/licenses/mit/",
+    description:"MIT License"
+  },
+  {
+    id:"apache", name:"Apache", version:"2.0", cat:"software", type1:"Permissive",
+    readability:["Legalese"],
+    patentGrant:"Yes", popularity:["Established","Popular"],
+    modNotices:"Required", cureProv:"No",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"", drafterExpl:"", link:"http://www.apache.org/licenses/LICENSE-2.0",
+    description:"Apache License"
+  },
+  {
+    id:"blueoak", name:"BlueOak", version:"1.0.0", cat:"software", type1:"Permissive",
+    readability:["Human-Readable","Short"],
+    patentGrant:"Yes", popularity:["New"],
+    modNotices:"Not Required", cureProv:"30 days after notification",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"", drafterExpl:"https://blueoakcouncil.org/2019/03/06/model.html",
+    link:"https://blueoakcouncil.org/2019/03/06/model.html",
+    description:"Blue Oak Model License"
+  },
+  {
+    id:"bsd2patent", name:"BSD-2-Clause-Patent", version:"1", cat:"software", type1:"Permissive",
+    readability:["Legalese","Short"],
+    patentGrant:"Yes", popularity:["New"],
+    modNotices:"Not Required", cureProv:"No",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"This is just a version of BSD 2-Clause which adds a patent grant term taken from Apache.",
+    drafterExpl:"http://lists.opensource.org/pipermail/license-review_lists.opensource.org/2017-March/003013.html",
+    link:"https://spdx.org/licenses/BSD-2-Clause-Patent.html",
+    description:"BSD-2-Clause Plus Patent License"
+  },
+  {
+    id:"mpl", name:"MPL", version:"2.0", cat:"software", type1:"Weakly Reciprocal",
+    readability:["Legalese"],
+    patentGrant:"Yes", popularity:["Established","Popular"],
+    modNotices:"Not Required", cureProv:"30 days after notification",
+    trigger:"When you give your derived software to someone else, except if you only share it within your organization.",
+    reach:"Share the sources of any files in the licensed work which you have modified (including if you first made a copy before modifying it).",
+    licensing:"License your work under MPL, or license it under GPL if you are combining the MPL-licensed work with GPL-licensed work.",
+    distribution:"Inform the recipient how to obtain a copy of the sources by reasonable means.",
+    comments:"The reciprocality of this license has a more limited (and easier-to-understand) reach than LGPL.",
+    drafterExpl:"https://www.mozilla.org/en-US/MPL/2.0/FAQ/",
+    link:"https://www.mozilla.org/en-US/MPL/",
+    description:"Mozilla Public License"
+  },
+  {
+    id:"lgpl", name:"GNU-LGPL", version:"3", cat:"software", type1:"Weakly Reciprocal",
+    readability:["Legalese","Very Long"],
+    patentGrant:"Yes", popularity:["Established","Popular"],
+    modNotices:"Required", cureProv:"30 days after notification",
+    trigger:"When you give your derived software to someone else.",
+    reach:"Same as GPL, with additional exceptions. If you make a work by combining or dynamically linking with the licensed work through its interface, you do not have to share sources of the dynamically-linked components or components which do not link to the library.",
+    licensing:"License your work under either GPL or LGPL.",
+    distribution:"Same as GPL.",
+    comments:"This is just a supplement to GPL which modifies GPL.",
+    drafterExpl:"https://www.gnu.org/licenses/license-recommendations.html",
+    link:"https://www.gnu.org/licenses/lgpl-3.0.en.html",
+    description:"GNU Lesser General Public License"
+  },
+  {
+    id:"gpl", name:"GNU-GPL", version:"3", cat:"software", type1:"Strongly Reciprocal",
+    readability:["Legalese","Very Long"],
+    patentGrant:"Yes", popularity:["Established","Popular"],
+    modNotices:"Required", cureProv:"30 days after notification",
+    trigger:"When you give your derived software to someone else, except if you only share it within your organization.",
+    reach:"Share both the licensed work, and the sources of the entirety of any adapted works that you create based on the licensed work, to anyone you give a copy of your adapted work to, as well as all code needed to run and develop the work.",
+    licensing:"License your work under GPL.",
+    distribution:"Provide the source to the recipient on a physical medium customarily used for sharing software, or with a written offer to give a copy of the source on a physical medium or network server, or offer access from the same designated place as the object code.",
+    comments:"It is hard to be exactly clear on everything GPL says, so this might have some inaccuracies.",
+    drafterExpl:"https://www.gnu.org/licenses/quick-guide-gplv3.html",
+    link:"http://www.gnu.org/licenses/quick-guide-gplv3.html",
+    description:"GNU General Public License"
+  },
+  {
+    id:"parity", name:"Parity", version:"", cat:"software", type1:"Strongly Reciprocal",
+    readability:["Human-Readable","Short"],
+    patentGrant:"Yes", popularity:["New"],
+    modNotices:"Not Required", cureProv:"30 days after discovery",
+    trigger:"When you develop, operate, or analyze software using the licensed software.",
+    reach:"Share the sources of the entirety of any software you develop, operate, or analyze with the licensed work. You don't have to share prototypes, which must meet 3 conditions: you don't use it for more than 30 days, you don't share it outside the team developing it other than for non-production user testing, and you don't develop, operate, or analyze other software with it for anyone outside the team developing it.",
+    licensing:"Make sure every part of it (including your work) is licensed under Parity or any other license which is at least as permissive as Parity (e.g. Apache, MIT, BSD 2-clause, Blue Oak).",
+    distribution:"Publish it in the preferred form for making changes, through a freely-accessible distribution system widely used for similar source code so the licensor and others can find and copy it.",
+    comments:"Note that this is a very broad reach, broader than GPL and closer to the reach of the Medtronic PB 560 license, but it allows them to use any license which gives equivalent or more permissions (unlike the GPL or Medtronic PB 560 license), and it has a prototypes exception (unlike the Medtronic PB 560 license). Note that it also asks them to share their work with the public, not just people who receive the software.",
+    drafterExpl:"https://writing.kemitchell.com/2019/03/17/License-Utopia.html",
+    link:"https://paritylicense.com/versions/7.0.0",
+    description:"Parity Public License"
+  },
+  {
+    id:"cern-ohl-p", name:"CERN-OHL-P", version:"2.0", cat:"hardware", type1:"Permissive",
+    readability:["Legalese"],
+    patentGrant:"Yes", popularity:["New","Popular"],
+    modNotices:"Not Required", cureProv:"No",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"", drafterExpl:"https://www.ohwr.org/project/cernohl/wikis/FAQ",
+    link:"https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2",
+    description:"CERN Open Hardware Licence (permissive)"
+  },
+  {
+    id:"shl", name:"SHL", version:"2.1", cat:"hardware", type1:"Permissive",
+    readability:["Legalese"],
+    patentGrant:"Yes", popularity:["New","Established"],
+    modNotices:"Required", cureProv:"No",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"This is just a wrapper around Apache to extend it to hardware.",
+    drafterExpl:"https://www.jolts.world/index.php/jolts/article/view/69/131",
+    link:"https://solderpad.org/licenses/",
+    description:"Solderpad Hardware License"
+  },
+  {
+    id:"cern-ohl-w", name:"CERN-OHL-W", version:"2.0", cat:"hardware", type1:"Weakly Reciprocal",
+    readability:["Legalese"],
+    patentGrant:"Yes", popularity:["New","Popular"],
+    modNotices:"Required", cureProv:"30 days after notification",
+    trigger:"Same as CERN-OHL-S.",
+    reach:"Same as CERN-OHL-S, with additional exceptions. You can also treat non-physical parts as off-the-shelf components. You do not have to share external works which you combine with the licensed work, if they only use interfaces documented in the licensed work and are not otherwise derivative of or containing the licensed work.",
+    licensing:"License your work under CERN-OHL-W.",
+    distribution:"Same as CERN-OHL-S.",
+    comments:"", drafterExpl:"https://www.ohwr.org/project/cernohl/wikis/FAQ",
+    link:"https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2",
+    description:"CERN Open Hardware Licence (weakly-reciprocal)"
+  },
+  {
+    id:"cern-ohl-s", name:"CERN-OHL-S", version:"2.0", cat:"hardware", type1:"Strongly Reciprocal",
+    readability:["Legalese"],
+    patentGrant:"Yes", popularity:["New","Popular","Established"],
+    modNotices:"Required", cureProv:"30 days after notification",
+    trigger:"When you give your derived hardware to someone else, except when you give it to certain contractors working on your behalf under certain conditions.",
+    reach:"Share the sources of the entirety of any adapted works that you create based on the licensed work (such as by including it in a larger work). You don't have to share sources of off-the-shelf physical components.",
+    licensing:"License your work under CERN-OHL-S.",
+    distribution:"Make sure the recipient receives a copy of your work, or else add a source location notice for it.",
+    comments:"", drafterExpl:"https://www.ohwr.org/project/cernohl/wikis/FAQ",
+    link:"https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2",
+    description:"CERN Open Hardware Licence (strongly-reciprocal)"
+  },
+  {
+    id:"tapr-ohl", name:"TAPR-OHL", version:"1.0", cat:"hardware", type1:"Strongly Reciprocal",
+    readability:["Legalese","Easy Summary"],
+    patentGrant:"Yes", popularity:["Established"],
+    modNotices:"Required", cureProv:"No",
+    trigger:"When you give your derived hardware to someone else.",
+    reach:"Share the sources of the entirety of any adapted works that you create based on the licensed work (such as by including it in a larger work).",
+    licensing:"License your work under TAPR-OHL.",
+    distribution:"Email it to the licensor(s).",
+    comments:"The reciprocality requirements do not ensure that users will always be able to access the sources.",
+    drafterExpl:"https://web.tapr.org/Ackermann_Open_Source_Hardware_Article_2009.pdf",
+    link:"https://tapr.org/the-tapr-open-hardware-license/",
+    description:"TAPR Open Hardware License"
+  },
+  {
+    id:"cc-by", name:"CC-BY", version:"4.0", cat:"media", type1:"Permissive",
+    readability:["Legalese","Long","Easy Summary"],
+    patentGrant:"No", popularity:["Established","Popular"],
+    modNotices:"Required", cureProv:"30 days after discovery",
+    trigger:"N/A", reach:"N/A", licensing:"N/A", distribution:"N/A",
+    comments:"", drafterExpl:"",
+    link:"https://creativecommons.org/licenses/by/4.0/",
+    description:"Creative Commons Attribution International License"
+  },
+  {
+    id:"cc-by-sa", name:"CC BY-SA", version:"4", cat:"media", type1:"Strongly Reciprocal",
+    readability:["Legalese","Long","Easy Summary"],
+    patentGrant:"No", popularity:["Established","Popular"],
+    modNotices:"Required", cureProv:"30 days after discovery",
+    trigger:"When you share your derived work to someone else.",
+    reach:"If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.",
+    licensing:"License your work under CC-BY-SA.",
+    distribution:"Not specified.",
+    comments:"", drafterExpl:"",
+    link:"https://creativecommons.org/licenses/by-sa/4.0/",
+    description:"Creative Commons Attribution-ShareAlike International License"
+  },
+];
+
+/* ── Render helpers ── */
+const READABILITY_CFG = {
+  "Legalese":       "qbadge-concern",
+  "Easy Summary":   "qbadge-good",
+  "Human-Readable": "qbadge-good",
+  "Very Long":      "qbadge-bad",
+  "Long":           "qbadge-concern",
+  "Short":          "qbadge-good",
+};
+const PATENT_CFG = {
+  "Yes":       "qbadge-good",
+  "Ambiguous": "qbadge-concern",
+  "No":        "qbadge-bad",
+};
+const POPULARITY_CFG = {
+  "Established": "qbadge-good",
+  "Popular":     "qbadge-good",
+  "New":         "qbadge-concern",
+};
+const MODNOTICES_CFG = {
+  "Required":     { cls:"tbadge tbadge-blue",   label:"Required" },
+  "Not Required": { cls:"tbadge tbadge-purple",  label:"Not Required" },
+};
+const CUREPROV_CFG = {
+  "No":                         "qbadge-bad",
+  "30 days after discovery":    "qbadge-good",
+  "30 days after notification": "qbadge-good",
+};
+
+function multiQbadge(arr, cfg) {
+  return `<div class="tag-cell">${arr.map(v => `<span class="qbadge ${cfg[v]||"qbadge-concern"}">${v}</span>`).join("")}</div>`;
+}
+function catTag(cat) {
+  const m = {software:["tag-sw","Software"],hardware:["tag-hw","Hardware"],media:["tag-md","Media"]};
+  const [cls,lbl] = m[cat]||["tag-sw",cat];
+  return `<span class="tag ${cls}">${lbl}</span>`;
+}
+function type1Tag(t) {
+  const m = {"Permissive":["tag-perm","Permissive"],"Weakly Reciprocal":["tag-weak","Weakly Reciprocal"],"Strongly Reciprocal":["tag-strong","Strongly Reciprocal"]};
+  const [cls,lbl] = m[t]||["tag-perm",t];
+  return `<span class="tag ${cls}">${lbl}</span>`;
+}
+
+/* ── State ── */
+let activeCat="all", activeType="all", searchQuery="";
+let sortCol=null, sortDir=1, selected=new Set(), openRow=null;
+
+function filterLicenses() {
+  return LICENSES.filter(l => {
+    if (activeCat !== "all" && l.cat !== activeCat) return false;
+    if (activeType !== "all" && l.type1 !== activeType) return false;
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      const hay = [l.name, l.description, l.type1, l.cat, ...l.readability, l.patentGrant, ...l.popularity].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+function sortLicenses(list) {
+  if (!sortCol) return list;
+  return [...list].sort((a,b) => {
+    let av = Array.isArray(a[sortCol]) ? a[sortCol][0] : (a[sortCol]||"");
+    let bv = Array.isArray(b[sortCol]) ? b[sortCol][0] : (b[sortCol]||"");
+    return String(av).localeCompare(String(bv)) * sortDir;
+  });
+}
+
+function renderTable() {
+  const tbody = document.getElementById("tbody");
+  const filtered = sortLicenses(filterLicenses());
+  document.getElementById("count-label").textContent = `${filtered.length} license${filtered.length!==1?"s":""}`;
+  tbody.innerHTML = "";
+
+  if (!filtered.length) {
+    tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;padding:2em;color:var(--fg-muted)">No licenses match.</td></tr>`;
+    return;
+  }
+
+  filtered.forEach(lic => {
+    const isSelected = selected.has(lic.id);
+    const mn = MODNOTICES_CFG[lic.modNotices] || {cls:"tbadge tbadge-blue",label:lic.modNotices};
+
+    const tr = document.createElement("tr");
+    tr.dataset.id = lic.id;
+    if (isSelected) tr.classList.add("selected");
+    tr.innerHTML = `
+      <td class="name-cell">${lic.name}${lic.version ? `<span class="version-note">v${lic.version}</span>` : ""}</td>
+      <td>${catTag(lic.cat)}</td>
+      <td>${type1Tag(lic.type1)}</td>
+      <td>${multiQbadge(lic.readability, READABILITY_CFG)}</td>
+      <td><span class="qbadge ${PATENT_CFG[lic.patentGrant]||"qbadge-concern"}">${lic.patentGrant}</span></td>
+      <td>${multiQbadge(lic.popularity, POPULARITY_CFG)}</td>
+      <td><span class="${mn.cls}">${mn.label}</span></td>
+      <td><span class="qbadge ${CUREPROV_CFG[lic.cureProv]||"qbadge-bad"}">${lic.cureProv}</span></td>
+      <td class="check-cell"><input type="checkbox" class="compare-checkbox" data-id="${lic.id}" ${isSelected?"checked":""} title="Add to comparison"></td>
+    `;
+
+    const dtr = document.createElement("tr");
+    dtr.classList.add("detail-row");
+    dtr.dataset.detailFor = lic.id;
+    if (openRow === lic.id) dtr.classList.add("open");
+
+    const isRecip = lic.trigger !== "N/A";
+    const recipHtml = isRecip ? `
+      <div class="recip-grid">
+        <div class="detail-item"><div class="detail-label">Reciprocality Trigger</div><div class="detail-val">${lic.trigger}</div></div>
+        <div class="detail-item"><div class="detail-label">Reciprocality Reach</div><div class="detail-val">${lic.reach}</div></div>
+        <div class="detail-item"><div class="detail-label">Reciprocality Licensing</div><div class="detail-val">${lic.licensing}</div></div>
+        <div class="detail-item"><div class="detail-label">Reciprocality Distribution</div><div class="detail-val">${lic.distribution}</div></div>
+      </div>` : `<p style="font-size:0.84em;color:var(--fg-muted);margin-bottom:0.6em">No reciprocality requirements (permissive).</p>`;
+
+    const commentsHtml = lic.comments ? `<div class="detail-note">${lic.comments}</div>` : "";
+    const linksHtml = [
+      lic.link ? `<a href="${lic.link}" target="_blank" rel="noopener">Official text ↗</a>` : "",
+      lic.drafterExpl && lic.drafterExpl !== lic.link ? `<a href="${lic.drafterExpl}" target="_blank" rel="noopener">Drafter's explanation ↗</a>` : "",
+    ].filter(Boolean).join("");
+
+    dtr.innerHTML = `<td colspan="9">
+      ${recipHtml}
+      ${commentsHtml}
+      ${linksHtml ? `<div class="detail-links">${linksHtml}</div>` : ""}
+    </td>`;
+
+    tr.addEventListener("click", e => {
+      if (e.target.type==="checkbox") return;
+      openRow = (openRow===lic.id) ? null : lic.id;
+      renderTable();
+    });
+
+    tbody.appendChild(tr);
+    tbody.appendChild(dtr);
+    if (openRow===lic.id) dtr.classList.add("open");
+  });
+
+  tbody.querySelectorAll(".compare-checkbox").forEach(cb => {
+    cb.addEventListener("change", e => {
+      e.stopPropagation();
+      const id = cb.dataset.id;
+      if (cb.checked) {
+        if (selected.size>=5) { cb.checked=false; return; }
+        selected.add(id);
+      } else { selected.delete(id); }
+      updateCompareBar();
+      cb.closest("tr").classList.toggle("selected", selected.has(id));
+    });
+  });
+}
+
+function updateCompareBar() {
+  document.getElementById("compare-count").textContent = `${selected.size} selected`;
+  document.getElementById("compare-bar").classList.toggle("visible", selected.size>=2);
+}
+
+/* ── Sort ── */
+document.getElementById("license-table").querySelectorAll("thead th[data-col]").forEach(th => {
+  th.addEventListener("click", () => {
+    const col = th.dataset.col;
+    if (col==="compare") return;
+    sortDir = (sortCol===col) ? sortDir*-1 : 1;
+    sortCol = col;
+    document.querySelectorAll("thead th").forEach(t => { t.classList.remove("sorted"); const s=t.querySelector(".sort-icon"); if(s) s.textContent="↕"; });
+    th.classList.add("sorted");
+    const si = th.querySelector(".sort-icon"); if(si) si.textContent = sortDir===1?"↑":"↓";
+    renderTable();
+  });
+});
+
+/* ── Filters ── */
+document.getElementById("cat-filter").addEventListener("click", e => {
+  const p=e.target.closest(".pill"); if(!p) return;
+  document.querySelectorAll("#cat-filter .pill").forEach(x=>x.classList.remove("active"));
+  p.classList.add("active"); activeCat=p.dataset.cat; renderTable();
+});
+document.getElementById("type-filter").addEventListener("click", e => {
+  const p=e.target.closest(".pill"); if(!p) return;
+  document.querySelectorAll("#type-filter .pill").forEach(x=>x.classList.remove("active"));
+  p.classList.add("active"); activeType=p.dataset.type; renderTable();
+});
+document.getElementById("search").addEventListener("input", e => { searchQuery=e.target.value.trim(); renderTable(); });
+
+/* ── Compare modal ── */
+const CMP_FIELDS = [
+  { label:"Type",          render:l => catTag(l.cat) },
+  { label:"Reciprocality", render:l => type1Tag(l.type1) },
+  { label:"Readability",   render:l => multiQbadge(l.readability, READABILITY_CFG) },
+  { label:"Patent Grant",  render:l => `<span class="qbadge ${PATENT_CFG[l.patentGrant]||""}">${l.patentGrant}</span>` },
+  { label:"Popularity",    render:l => multiQbadge(l.popularity, POPULARITY_CFG) },
+  { label:"Mod. Notices",  render:l => { const m=MODNOTICES_CFG[l.modNotices]||{cls:"tbadge",label:l.modNotices}; return `<span class="${m.cls}">${m.label}</span>`; } },
+  { label:"Cure Provision",render:l => `<span class="qbadge ${CUREPROV_CFG[l.cureProv]||""}">${l.cureProv}</span>` },
+  { label:"Recip. Trigger",render:l => `<span style="font-size:0.8em">${l.trigger}</span>` },
+  { label:"Recip. Reach",  render:l => `<span style="font-size:0.8em">${l.reach}</span>` },
+  { label:"Recip. Licensing",render:l=>`<span style="font-size:0.8em">${l.licensing}</span>` },
+  { label:"Recip. Distribution",render:l=>`<span style="font-size:0.8em">${l.distribution}</span>` },
+];
+document.getElementById("compare-btn").addEventListener("click", () => {
+  const lics = [...selected].map(id => LICENSES.find(l=>l.id===id));
+  let html = `<table class="compare-table"><thead><tr><th>Property</th>${lics.map(l=>`<th>${l.name} <span style="font-size:0.8em;opacity:0.6">v${l.version}</span></th>`).join("")}</tr></thead><tbody>`;
+  CMP_FIELDS.forEach(f => {
+    html += `<tr><td>${f.label}</td>${lics.map(l=>`<td>${f.render(l)}</td>`).join("")}</tr>`;
+  });
+  if (lics.some(l=>l.comments)) html += `<tr><td>Comments</td>${lics.map(l=>`<td style="text-align:left;font-size:0.8em">${l.comments||"—"}</td>`).join("")}</tr>`;
+  html += `<tr><td>Link</td>${lics.map(l=>`<td>${l.link?`<a href="${l.link}" target="_blank" rel="noopener">↗</a>`:"—"}</td>`).join("")}</tr>`;
+  html += "</tbody></table>";
+  document.getElementById("compare-table-wrap").innerHTML = html;
+  document.getElementById("modal-overlay").classList.add("open");
+});
+document.getElementById("compare-clear").addEventListener("click", () => { selected.clear(); updateCompareBar(); renderTable(); });
+document.getElementById("modal-close").addEventListener("click", () => document.getElementById("modal-overlay").classList.remove("open"));
+document.getElementById("modal-overlay").addEventListener("click", e => { if(e.target===document.getElementById("modal-overlay")) document.getElementById("modal-overlay").classList.remove("open"); });
+
+/* ── Night mode (page button — navbar has its own) ── */
+const nightBtn = document.getElementById("page-night-btn");
+if (localStorage.getItem("nightMode")==="on") { document.body.classList.add("night"); nightBtn.textContent="☀️"; }
+nightBtn.addEventListener("click", () => {
+  document.body.classList.toggle("night");
+  const on = document.body.classList.contains("night");
+  nightBtn.textContent = on?"☀️":"🌙";
+  const navBtn = document.getElementById("night-toggle");
+  if (navBtn) navBtn.textContent = on?"☀️":"🌙";
+  localStorage.setItem("nightMode", on?"on":"off");
+});
+
+/* ── Combinations table ── */
+const COMBINATIONS = [
+  { id:"cern-s-parity-ccsa",  name:"CERN-OHL-S + Parity + CC-BY-SA",           type:["Strongly Reciprocal"], modNotices:"Hardware Only", cureProv:"Yes", swReadability:"High",     swFlexibility:"High",     swPopularity:"Low",  hwSwConsistency:"Moderate" },
+  { id:"cern-s-gpl-ccsa",     name:"CERN-OHL-S + GPL + CC-BY-SA",               type:["Strongly Reciprocal"], modNotices:"Yes",           cureProv:"Yes", swReadability:"Low",      swFlexibility:"Low",      swPopularity:"High", hwSwConsistency:"High" },
+  { id:"cern-w-parity-ccsa",  name:"CERN-OHL-W + Parity + CC-BY-SA",            type:["Mixed"],               modNotices:"Hardware Only", cureProv:"Yes", swReadability:"High",     swFlexibility:"High",     swPopularity:"Low",  hwSwConsistency:"Moderate" },
+  { id:"cern-w-mpl-ccsa",     name:"CERN-OHL-W + MPL + CC-BY-SA",               type:["Weakly Reciprocal"],   modNotices:"Hardware Only", cureProv:"Yes", swReadability:"Moderate", swFlexibility:"Moderate", swPopularity:"High", hwSwConsistency:"High" },
+  { id:"cern-w-lgpl-ccsa",    name:"CERN-OHL-W + LGPL + CC-BY-SA",              type:["Weakly Reciprocal"],   modNotices:"Yes",           cureProv:"Yes", swReadability:"Low",      swFlexibility:"Moderate", swPopularity:"High", hwSwConsistency:"High" },
+  { id:"shl-apache-ccby",     name:"SHL + Apache + CC-BY",                       type:["Permissive"],          modNotices:"Yes",           cureProv:"No",  swReadability:"Moderate", swFlexibility:"High",     swPopularity:"High", hwSwConsistency:"Unified" },
+  { id:"cern-p-blueoak-ccby", name:"CERN-OHL-P + BlueOak + CC-BY",              type:["Permissive"],          modNotices:"No",            cureProv:"Yes", swReadability:"High",     swFlexibility:"High",     swPopularity:"Low",  hwSwConsistency:"High" },
+  { id:"cern-p-bsd2-ccby",    name:"CERN-OHL-P + BSD-2-Clause-Patent + CC-BY",  type:["Permissive"],          modNotices:"No",            cureProv:"Yes", swReadability:"Moderate", swFlexibility:"High",     swPopularity:"High", hwSwConsistency:"High" },
+];
+
+const CTYPE_CFG = {
+  "Strongly Reciprocal": { cls:"tbadge tbadge-purple", label:"Strongly Reciprocal" },
+  "Weakly Reciprocal":   { cls:"tbadge tbadge-blue",   label:"Weakly Reciprocal" },
+  "Permissive":          { cls:"tbadge tbadge-gray",   label:"Permissive" },
+  "Mixed":               { cls:"tbadge tbadge-pink",   label:"Mixed" },
+};
+const CMODNOTICES_CFG = {
+  "Yes":           { cls:"tbadge tbadge-blue",   label:"Yes" },
+  "No":            { cls:"tbadge tbadge-purple",  label:"No" },
+  "Hardware Only": { cls:"tbadge tbadge-pink",   label:"Hardware Only" },
+};
+const CCUREPROV_CFG       = { "Yes":"qbadge-good", "No":"qbadge-bad" };
+const SWREADABILITY_CFG   = { "High":"qbadge-good", "Moderate":"qbadge-concern", "Low":"qbadge-bad" };
+const SWFLEXIBILITY_CFG   = { "High":"qbadge-good", "Moderate":"qbadge-concern", "Low":"qbadge-bad" };
+const SWPOPULARITY_CFG    = { "High":"qbadge-good", "Low":"qbadge-concern" };
+const HWSWCONSISTENCY_CFG = { "High":"qbadge-good", "Unified":"qbadge-good", "Moderate":"qbadge-concern" };
+
+let comboCtype="all", comboSearch="", comboSortCol=null, comboSortDir=1;
+
+function filterCombinations() {
+  return COMBINATIONS.filter(c => {
+    if (comboCtype !== "all" && !c.type.includes(comboCtype)) return false;
+    if (comboSearch) {
+      const q = comboSearch.toLowerCase();
+      const hay = [c.name, ...c.type, c.modNotices, c.cureProv, c.swReadability, c.swFlexibility, c.swPopularity, c.hwSwConsistency].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+function sortCombinations(list) {
+  if (!comboSortCol) return list;
+  return [...list].sort((a,b) => {
+    let av = Array.isArray(a[comboSortCol]) ? a[comboSortCol][0] : (a[comboSortCol]||"");
+    let bv = Array.isArray(b[comboSortCol]) ? b[comboSortCol][0] : (b[comboSortCol]||"");
+    return String(av).localeCompare(String(bv)) * comboSortDir;
+  });
+}
+
+function renderCombinations() {
+  const tbody = document.getElementById("combo-tbody");
+  const filtered = sortCombinations(filterCombinations());
+  document.getElementById("combo-count-label").textContent = `${filtered.length} combination${filtered.length!==1?"s":""}`;
+  tbody.innerHTML = "";
+  if (!filtered.length) {
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:2em;color:var(--fg-muted)">No combinations match.</td></tr>`;
+    return;
+  }
+  filtered.forEach(c => {
+    const mn = CMODNOTICES_CFG[c.modNotices] || {cls:"tbadge",label:c.modNotices};
+    const hc = HWSWCONSISTENCY_CFG[c.hwSwConsistency] || "qbadge-concern";
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="name-cell">${c.name}</td>
+      <td>${c.type.map(t => { const cfg=CTYPE_CFG[t]||{cls:"tbadge",label:t}; return `<span class="${cfg.cls}">${cfg.label}</span>`; }).join(" ")}</td>
+      <td><span class="${mn.cls}">${mn.label}</span></td>
+      <td><span class="qbadge ${CCUREPROV_CFG[c.cureProv]||"qbadge-bad"}">${c.cureProv}</span></td>
+      <td><span class="qbadge ${SWREADABILITY_CFG[c.swReadability]||"qbadge-concern"}">${c.swReadability}</span></td>
+      <td><span class="qbadge ${SWFLEXIBILITY_CFG[c.swFlexibility]||"qbadge-concern"}">${c.swFlexibility}</span></td>
+      <td><span class="qbadge ${SWPOPULARITY_CFG[c.swPopularity]||"qbadge-concern"}">${c.swPopularity}</span></td>
+      <td><span class="qbadge ${hc}">${c.hwSwConsistency}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+document.getElementById("combo-table").querySelectorAll("thead th[data-ccol]").forEach(th => {
+  th.addEventListener("click", () => {
+    const col = th.dataset.ccol;
+    comboSortDir = (comboSortCol===col) ? comboSortDir*-1 : 1;
+    comboSortCol = col;
+    document.querySelectorAll("#combo-table thead th").forEach(t => { t.classList.remove("sorted"); const s=t.querySelector(".sort-icon"); if(s) s.textContent="↕"; });
+    th.classList.add("sorted");
+    const si = th.querySelector(".sort-icon"); if(si) si.textContent = comboSortDir===1?"↑":"↓";
+    renderCombinations();
+  });
+});
+document.getElementById("combo-type-filter").addEventListener("click", e => {
+  const p=e.target.closest(".pill"); if(!p) return;
+  document.querySelectorAll("#combo-type-filter .pill").forEach(x=>x.classList.remove("active"));
+  p.classList.add("active"); comboCtype=p.dataset.ctype; renderCombinations();
+});
+document.getElementById("combo-search").addEventListener("input", e => { comboSearch=e.target.value.trim(); renderCombinations(); });
+
+renderTable();
+renderCombinations();
+</script>
+</body>
+</html>
