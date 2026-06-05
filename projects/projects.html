@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>projects. Abel Tomy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../image.JPG">
+  <link rel="stylesheet" href="../style.css?v=2">
+  <script src="../components/analytics.js"></script>
+</head>
+<body>
+ <div id="site-nav"></div>
+
+  <div class="view-toggle">
+    <button id="btn-grid" class="view-btn" title="Grid view" aria-label="Grid view">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <rect x="1" y="1" width="6" height="6" rx="1"/>
+        <rect x="9" y="1" width="6" height="6" rx="1"/>
+        <rect x="1" y="9" width="6" height="6" rx="1"/>
+        <rect x="9" y="9" width="6" height="6" rx="1"/>
+      </svg>
+    </button>
+    <button id="btn-list" class="view-btn" title="List view" aria-label="List view">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <rect x="1" y="2" width="2" height="2" rx="0.5"/>
+        <rect x="5" y="2" width="10" height="2" rx="0.5"/>
+        <rect x="1" y="7" width="2" height="2" rx="0.5"/>
+        <rect x="5" y="7" width="10" height="2" rx="0.5"/>
+        <rect x="1" y="12" width="2" height="2" rx="0.5"/>
+        <rect x="5" y="12" width="10" height="2" rx="0.5"/>
+      </svg>
+    </button>
+  </div>
+
+  <h2>2025</h2>
+  <div class="project-grid">
+    <a class="project-card" href="https://screenpaint.abeltomy.workers.dev/">
+      <div class="project-card-img" style="background-image: url('thumbs/screenpaint.jpg')"></div>
+      <div class="project-card-body">
+        <span class="project-card-title">Screen Paint</span>
+      </div>
+    </a>
+    <a class="project-card" href="https://abeltomy.github.io/IMG_2208/">
+      <div class="project-card-img" style="background-image: url('thumbs/img2208.jpg')"></div>
+      <div class="project-card-body">
+        <span class="project-card-title">IMG_2208 &mdash; real reel</span>
+      </div>
+    </a>
+  </div>
+
+  <h2>Courses</h2>
+  <div class="project-grid">
+    <a class="project-card" href="https://www.fabacademy.org/2021/labs/kochi/students/abel-tomy/">
+      <div class="project-card-img" style="background-image: url('thumbs/fabacademy.jpg')"></div>
+      <div class="project-card-body">
+        <span class="project-card-title">Fab Academy 2021</span>
+      </div>
+    </a>
+  </div>
+
+<script src="../components/navbar.js?v=2"></script>
+<script>
+(function () {
+  var mode = localStorage.getItem('projectView') || 'grid';
+  var btnGrid = document.getElementById('btn-grid');
+  var btnList = document.getElementById('btn-list');
+  function apply(m) {
+    document.body.classList.toggle('list-mode', m === 'list');
+    btnGrid.classList.toggle('active', m === 'grid');
+    btnList.classList.toggle('active', m === 'list');
+    localStorage.setItem('projectView', m);
+  }
+  btnGrid.onclick = function () { apply('grid'); };
+  btnList.onclick = function () { apply('list'); };
+  apply(mode);
+}());
+</script>
+</body>
+</html>

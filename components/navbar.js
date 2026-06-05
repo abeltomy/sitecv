@@ -11,7 +11,7 @@ function loadNavbar() {
   const homeHref = new URL("index.html", siteRoot).href;
   const blogHref = new URL("blog.html", siteRoot).href;
   const cvHref = new URL("cv.html", siteRoot).href;
-  const projectsHref = new URL("projects.html", siteRoot).href;
+  const projectsHref = new URL("projects/projects.html", siteRoot).href;
 
   mount.innerHTML = `
     <nav style="display: flex; justify-content: space-between; align-items: center;">

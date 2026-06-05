@@ -182,3 +182,136 @@ body.consumed-page .page-title {
 body.cv-page {
   max-width: 700px;
 }
+
+/* --- View toggle (grid / list) --- */
+.view-toggle {
+  display: flex;
+  gap: 0.3em;
+  justify-content: flex-end;
+  margin-bottom: 0.5em;
+}
+
+.view-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.3em 0.45em;
+  cursor: pointer;
+  color: #bbb;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.view-btn.active {
+  color: #111;
+  border-color: #aaa;
+}
+
+body.night .view-btn {
+  border-color: #3a3a3a;
+  color: #555;
+}
+
+body.night .view-btn.active {
+  color: #e0e0e0;
+  border-color: #777;
+}
+
+/* List mode overrides */
+body.list-mode .project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 1.5em;
+}
+
+body.list-mode .project-card {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+body.list-mode .project-card:first-child {
+  border-top: 1px solid #e8e8e8;
+}
+
+body.list-mode .project-card:hover {
+  transform: none;
+  box-shadow: none;
+  background: #f8f8f8;
+}
+
+body.list-mode .project-card-img {
+  display: none;
+}
+
+body.list-mode .project-card-body {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55em 0;
+}
+
+body.list-mode .project-card-title {
+  font-weight: 400;
+}
+
+body.night.list-mode .project-card {
+  border-color: #2e2e2e;
+}
+
+body.night.list-mode .project-card:hover {
+  background: #1f1f1f;
+}
+
+/* --- Project / Blog card grid --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.project-card-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #ebebeb;
+  background-size: cover;
+  background-position: center;
+}
+
+.project-card-body {
+  padding: 0.7em 0.9em 0.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+.project-card-title {
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+body.night .project-card {
+  border-color: #333;
+}
+
+body.night .project-card-img {
+  background-color: #252525;
+}
