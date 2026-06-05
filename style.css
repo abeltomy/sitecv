@@ -200,10 +200,10 @@ body.cv-page {
   background: none;
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 0.25em 0.65em;
+  padding: 0.3em 0.55em;
   cursor: pointer;
   color: #bbb;
-  font-size: 0.8em;
+  font-size: 0.82em;
   font-family: inherit;
 }
 
