@@ -53,8 +53,27 @@ Specialization is for insects.”</p>
   </p>
 </blockquote>
 
+<figure style="margin:2.5em 0 0;padding:0">
+  <iframe id="archillect-frame" title="Random image from Archillect"
+          sandbox="allow-scripts" referrerpolicy="no-referrer" loading="lazy"
+          style="width:100%;max-width:520px;height:400px;border:0;display:block"></iframe>
+  <figcaption style="font-size:0.85em;color:#777;margin-top:0.5em;max-width:520px">
+    Random image from <a href="https://archillect.com/about" target="_blank" rel="noopener noreferrer">Archillect</a>,
+    an AI that finds and shares visual content. Served by Archillect; rights stay with the original creators.
+    <a id="archillect-link" href="https://archillect.com/" target="_blank" rel="noopener noreferrer">#</a>
+  </figcaption>
+</figure>
+
 <script src="components/navbar.js?v=3"></script>
 <script>
+(function () {
+  var n = Math.floor(Math.random() * 410000) + 1;
+  document.getElementById('archillect-frame').src = 'https://archillect.com/' + n;
+  var link = document.getElementById('archillect-link');
+  link.href = 'https://archillect.com/' + n;
+  link.textContent = '#' + n;
+}());
+
 fetch('blog/quotes/quotes.json')
   .then(function (r) { return r.json(); })
   .then(function (quotes) {
