@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quotes — Abel Tomy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/image.JPG">
+  <link rel="stylesheet" href="/style.css?v=2">
+  <style>
+    .quote-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5em 0 0;
+      counter-reset: quote;
+    }
+
+    .quote-item {
+      display: flex;
+      gap: 0.9em;
+      align-items: baseline;
+      margin-bottom: 2.2em;
+    }
+
+    .quote-num {
+      flex: 0 0 auto;
+      min-width: 1.6em;
+      color: #aaa;
+      font-variant-numeric: tabular-nums;
+    }
+
+    body.night .quote-num {
+      color: #666;
+    }
+
+    .quote-body {
+      flex: 1 1 auto;
+    }
+
+    .quote-text {
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .quote-attr {
+      display: block;
+      margin-top: 0.5em;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    body.night .quote-attr {
+      color: #999;
+    }
+  </style>
+  <script src="/components/analytics.js"></script>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <h1 class="page-title">Quotes</h1>
+
+  <ol id="quote-list" class="quote-list"></ol>
+
+<script src="/components/navbar.js?v=3"></script>
+<script>
+fetch('/blog/quotes/quotes.json')
+  .then(function (r) { return r.json(); })
+  .then(function (quotes) {
+    var list = document.getElementById('quote-list');
+    quotes.forEach(function (q, i) {
+      var li = document.createElement('li');
+      li.className = 'quote-item';
+
+      var num = document.createElement('span');
+      num.className = 'quote-num';
+      num.textContent = (q.id || i + 1) + '.';
+
+      var body = document.createElement('div');
+      body.className = 'quote-body';
+
+      var text = document.createElement('p');
+      text.className = 'quote-text';
+      text.textContent = '“' + q.text + '”';
+
+      var attr = document.createElement('span');
+      attr.className = 'quote-attr';
+      attr.textContent = '— ' + q.author + (q.source ? ', ' + q.source : '');
+
+      body.appendChild(text);
+      body.appendChild(attr);
+      li.appendChild(num);
+      li.appendChild(body);
+      list.appendChild(li);
+    });
+  });
+</script>
+</body>
+</html>

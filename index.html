@@ -23,32 +23,47 @@ I am interested in Design and Manufacturing. And part time Travel Photographer.
 
 <p>Site inspired by <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS principle</a> by Kelly Johnson, Lockheed Martin.</p>
 
-<p>
-“A human being should be able to <br>
-change a diaper, <br>
-plan an invasion, <br>
-butcher a hog, <br>
-conn a ship, <br>
-design a building,<br> 
-write a sonnet, <br>
-balance accounts, <br>
-build a wall, <br>
-set a bone, <br>
-comfort the dying,<br> 
-take orders, <br>
-give orders, <br>
-cooperate, <br>
-act alone, <br>
-solve equations,<br> 
-analyze a new problem, <br>
-pitch manure, <br>
-program a computer, <br>
-cook a tasty meal, <br>
-fight efficiently, <br>
-die gallantly. <br>
-Specialization is for insects.”- Robert A. Heinlein 
-</p>
+<blockquote id="random-quote" style="margin:2em 0 0;padding:0;border:0">
+  <p id="random-quote-text" style="white-space:pre-line;margin:0">“A human being should be able to
+change a diaper,
+plan an invasion,
+butcher a hog,
+conn a ship,
+design a building,
+write a sonnet,
+balance accounts,
+build a wall,
+set a bone,
+comfort the dying,
+take orders,
+give orders,
+cooperate,
+act alone,
+solve equations,
+analyze a new problem,
+pitch manure,
+program a computer,
+cook a tasty meal,
+fight efficiently,
+die gallantly.
+Specialization is for insects.”</p>
+  <p style="margin:0.5em 0 0">
+    <span id="random-quote-attr">— Robert A. Heinlein</span>
+    &nbsp;<a href="blog/quotes/quotes.html" style="font-size:0.9em">more</a>
+  </p>
+</blockquote>
 
 <script src="components/navbar.js?v=3"></script>
+<script>
+fetch('blog/quotes/quotes.json')
+  .then(function (r) { return r.json(); })
+  .then(function (quotes) {
+    if (!quotes.length) return;
+    var q = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById('random-quote-text').textContent = '“' + q.text + '”';
+    document.getElementById('random-quote-attr').textContent =
+      '— ' + q.author + (q.source ? ', ' + q.source : '');
+  });
+</script>
 </body>
 </html>
