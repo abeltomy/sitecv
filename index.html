@@ -4,15 +4,23 @@
   <title>home. Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="image.JPG">
-  <link rel="stylesheet" href="style.css?v=2">
+  <script>
+    try {
+      var m = localStorage.getItem("sky-mode");
+      if (!m && localStorage.getItem("nightMode") === "on") m = "night";
+      if (m === "sunset" || m === "night") document.documentElement.dataset.mode = m;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="style.css?v=5">
   <script src="components/analytics.js"></script>
 </head>
-<body>
+<body class="sky-theme">
+<div class="hero">
 <div id="site-nav"></div>
 
-<p>Hi, I am <strong>Abel Tomy</strong></p>
+<h1 style="font-size:2em;font-weight:600;margin:0.6em 0 0.3em;">Hi, I am Abel Tomy</h1>
 
-<img src="image.JPG" alt="Abel Tomy" style="max-width:30%;height:auto;border-radius:8px;margin-bottom:1em;">
+<img class="profile-photo" src="image.JPG" alt="Abel Tomy" style="max-width:30%;height:auto;display:block;margin-bottom:1em;">
 <p>
 I’m from <a href="https://en.wikipedia.org/wiki/Kerala">Kerala</a>, India.<br>
 I currently live in Luleå, Sweden. Previous to that, I lived in India, UK, Slovenia.<br>
@@ -20,50 +28,8 @@ I am interested in Design and Manufacturing. And part time Travel Photographer.
 </p>
 
 <p>Mailto : hi[at]abeltomy[dot]com</p>
+</div>
 
-<p>Site inspired by <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS principle</a> by Kelly Johnson, Lockheed Martin.</p>
-
-<blockquote id="random-quote" style="margin:2em 0 0;padding:0;border:0">
-  <p id="random-quote-text" style="white-space:pre-line;margin:0">“A human being should be able to
-change a diaper,
-plan an invasion,
-butcher a hog,
-conn a ship,
-design a building,
-write a sonnet,
-balance accounts,
-build a wall,
-set a bone,
-comfort the dying,
-take orders,
-give orders,
-cooperate,
-act alone,
-solve equations,
-analyze a new problem,
-pitch manure,
-program a computer,
-cook a tasty meal,
-fight efficiently,
-die gallantly.
-Specialization is for insects.”</p>
-  <p style="margin:0.5em 0 0">
-    <span id="random-quote-attr">— Robert A. Heinlein</span>
-    &nbsp;<a href="blog/quotes/quotes.html" style="font-size:0.9em">more</a>
-  </p>
-</blockquote>
-
-<script src="components/navbar.js?v=3"></script>
-<script>
-fetch('blog/quotes/quotes.json')
-  .then(function (r) { return r.json(); })
-  .then(function (quotes) {
-    if (!quotes.length) return;
-    var q = quotes[Math.floor(Math.random() * quotes.length)];
-    document.getElementById('random-quote-text').textContent = '“' + q.text + '”';
-    document.getElementById('random-quote-attr').textContent =
-      '— ' + q.author + (q.source ? ', ' + q.source : '');
-  });
-</script>
+<script src="components/navbar.js?v=5"></script>
 </body>
 </html>
