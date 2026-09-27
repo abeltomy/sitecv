@@ -1,6 +1,26 @@
 {
-  "updated": "2026-09-20T10:43:16.010Z",
+  "updated": "2026-09-27T11:29:20.744Z",
   "items": [
+    {
+      "name": "AI Model & API Providers Analysis | Artificial Analysis",
+      "url": "https://artificialanalysis.ai/",
+      "date": "2026-09-22"
+    },
+    {
+      "name": "Transformer Explainer: LLM Transformer Model Visually Explained",
+      "url": "https://poloclub.github.io/transformer-explainer/",
+      "date": "2026-09-22"
+    },
+    {
+      "name": "The Hierarchy of Money",
+      "url": "https://gregorygundersen.com/blog/2026/09/20/hierarchy-of-money/",
+      "date": "2026-09-21"
+    },
+    {
+      "name": "Software sandboxing: The basics",
+      "url": "https://blog.emilua.org/2025/01/12/software-sandboxing-basics/",
+      "date": "2026-09-21"
+    },
     {
       "name": "Khipu Field Guide - Table of Contents",
       "url": "https://www.khipufieldguide.com/",
