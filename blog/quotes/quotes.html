@@ -2,10 +2,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Quotes — Abel Tomy</title>
+  <title>Quotes · Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/image.JPG">
-  <link rel="stylesheet" href="/style.css?v=2">
+  <link rel="stylesheet" href="/style.css?v=16">
+  <script src="/toggles.js?v=1"></script>
   <style>
     .quote-list {
       list-style: none;
@@ -52,16 +53,21 @@
       color: #999;
     }
   </style>
-  <script src="/components/analytics.js"></script>
 </head>
 <body>
-  <div id="site-nav"></div>
+<nav class="site-nav-bar">
+  <a class="nav-name" href="../../index.html">Abel Tomy</a>
+  <div class="nav-links">
+    <a class="nav-link" href="../../blog.html">blog</a>
+    <a class="nav-link" href="../../cv.html">cv</a>
+    <a class="nav-link" href="../../projects/">projects</a>
+  </div>
+</nav>
 
   <h1 class="page-title">Quotes</h1>
 
   <ol id="quote-list" class="quote-list"></ol>
 
-<script src="/components/navbar.js?v=3"></script>
 <script>
 fetch('/blog/quotes/quotes.json')
   .then(function (r) { return r.json(); })

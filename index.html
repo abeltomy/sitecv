@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>home. Abel Tomy</title>
+  <title>Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="image.JPG">
-  <script>
-    try {
-      var m = localStorage.getItem("sky-mode");
-      if (!m && localStorage.getItem("nightMode") === "on") m = "night";
-      if (m === "sunset" || m === "night") document.documentElement.dataset.mode = m;
-    } catch (e) {}
-  </script>
-  <link rel="stylesheet" href="style.css?v=5">
-  <script src="components/analytics.js"></script>
+  <link rel="stylesheet" href="style.css?v=16">
+  <script src="toggles.js?v=1"></script>
 </head>
-<body class="sky-theme">
-<div class="hero">
-<div id="site-nav"></div>
+<body>
+<nav class="site-nav-bar">
+  <a class="nav-name" href="index.html">Abel Tomy</a>
+  <div class="nav-links">
+    <a class="nav-link" href="blog.html">blog</a>
+    <a class="nav-link" href="cv.html">cv</a>
+    <a class="nav-link" href="projects/">projects</a>
+  </div>
+</nav>
 
-<h1 style="font-size:2em;font-weight:600;margin:0.6em 0 0.3em;">Hi, I am Abel Tomy</h1>
+<h1>Hi, I am Abel Tomy</h1>
 
-<img class="profile-photo" src="image.JPG" alt="Abel Tomy" style="max-width:30%;height:auto;display:block;margin-bottom:1em;">
+<img class="profile-photo" src="image.JPG" alt="Abel Tomy">
 <p>
 I’m from <a href="https://en.wikipedia.org/wiki/Kerala">Kerala</a>, India.<br>
 I currently live in Luleå, Sweden. Previous to that, I lived in India, UK, Slovenia.<br>
@@ -28,8 +27,6 @@ I am interested in Design and Manufacturing. And part time Travel Photographer.
 </p>
 
 <p>Mailto : hi[at]abeltomy[dot]com</p>
-</div>
 
-<script src="components/navbar.js?v=5"></script>
 </body>
 </html>

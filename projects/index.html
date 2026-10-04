@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>projects. Abel Tomy</title>
+  <title>Projects · Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../image.JPG">
-  <link rel="stylesheet" href="../style.css?v=2">
-  <script src="../components/analytics.js"></script>
+  <link rel="stylesheet" href="../style.css?v=16">
+  <script src="../toggles.js?v=1"></script>
 </head>
 <body>
- <div id="site-nav"></div>
+<nav class="site-nav-bar">
+  <a class="nav-name" href="../index.html">Abel Tomy</a>
+  <div class="nav-links">
+    <a class="nav-link" href="../blog.html">blog</a>
+    <a class="nav-link" href="../cv.html">cv</a>
+    <a class="nav-link active" href="../projects/" aria-current="page">projects</a>
+  </div>
+</nav>
 
   <div class="view-toggle">
     <div class="filter-bar">
@@ -115,7 +122,6 @@
     </div>
   </section>
 
-<script src="../components/navbar.js?v=3"></script>
 <script>
 (function () {
   var mode = localStorage.getItem('projectView') || 'grid';
