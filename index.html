@@ -4,7 +4,7 @@
   <title>Abel Tomy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="image.JPG">
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
   <script src="toggles.js?v=1"></script>
 </head>
 <body>
@@ -27,6 +27,14 @@ I am interested in Design and Manufacturing. And part time Travel Photographer.
 </p>
 
 <p>Mailto : hi[at]abeltomy[dot]com</p>
+
+<ascii-art id="scene" class="scene"></ascii-art>
+<p class="page-intro">from <a href="https://ascii.rest/">ascii.rest</a></p>
+<script>
+var scenes = ["aurora-fjord", "marine-drive", "varanasi-ghats", "kyoto-dusk"];
+document.getElementById("scene").setAttribute("piece", scenes[Math.floor(Math.random() * scenes.length)]);
+</script>
+<script type="module" src="https://ascii.rest/ascii.js"></script>
 
 </body>
 </html>

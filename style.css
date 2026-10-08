@@ -50,6 +50,9 @@ li + li { margin-top: 0.4em; }
 
 .page-intro { color: var(--muted); font-size: 0.9em; }
 
+/* ascii art scenes */
+.scene { width: 100%; }
+
 /* projects */
 .view-toggle { display: flex; justify-content: space-between; margin-bottom: 1em; }
 .filter-btn, .view-btn {
